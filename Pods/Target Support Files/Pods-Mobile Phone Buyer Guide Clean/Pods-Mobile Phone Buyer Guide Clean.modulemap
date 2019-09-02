@@ -1,0 +1,6 @@
+framework module Pods_Mobile_Phone_Buyer_Guide_Clean {
+  umbrella header "Pods-Mobile Phone Buyer Guide Clean-umbrella.h"
+
+  export *
+  module * { export * }
+}

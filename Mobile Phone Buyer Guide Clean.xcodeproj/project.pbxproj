@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93BC13F3CCC5BB02D2160F2E /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F693EFEA4AB6776BD1310 /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework */; };
+		A0C9F21D231CBB2400FB4232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F21C231CBB2400FB4232 /* AppDelegate.swift */; };
+		A0C9F224231CBB2400FB4232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C9F223231CBB2400FB4232 /* Assets.xcassets */; };
+		A0C9F227231CBB2400FB4232 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C9F225231CBB2400FB4232 /* LaunchScreen.storyboard */; };
+		A0C9F230231CBBB900FB4232 /* ProductListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C9F22F231CBBB900FB4232 /* ProductListStoryboard.storyboard */; };
+		A0C9F239231CBBF600FB4232 /* ProductListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F231231CBBF600FB4232 /* ProductListStore.swift */; };
+		A0C9F23A231CBBF600FB4232 /* ProductListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F232231CBBF600FB4232 /* ProductListPresenter.swift */; };
+		A0C9F23B231CBBF600FB4232 /* ProductListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F233231CBBF600FB4232 /* ProductListWorker.swift */; };
+		A0C9F23C231CBBF600FB4232 /* ProductListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F234231CBBF600FB4232 /* ProductListRouter.swift */; };
+		A0C9F23D231CBBF600FB4232 /* ProductListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F235231CBBF600FB4232 /* ProductListModels.swift */; };
+		A0C9F23E231CBBF600FB4232 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F236231CBBF600FB4232 /* ProductListViewController.swift */; };
+		A0C9F23F231CBBF600FB4232 /* ProductListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F237231CBBF600FB4232 /* ProductListInteractor.swift */; };
+		A0C9F240231CBBF600FB4232 /* ProductListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F238231CBBF600FB4232 /* ProductListEntity.swift */; };
+		A0C9F242231CC59600FB4232 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A0C9F241231CC59600FB4232 /* Podfile */; };
+		A0C9F245231CC98100FB4232 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F244231CC98100FB4232 /* Constants.swift */; };
+		A0C9F247231CD68A00FB4232 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F246231CD68A00FB4232 /* Extension.swift */; };
+		A0C9F24B231D0A7A00FB4232 /* MobileListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F249231D0A7A00FB4232 /* MobileListsTableViewCell.swift */; };
+		A0C9F24C231D0A7A00FB4232 /* MobileListsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C9F24A231D0A7A00FB4232 /* MobileListsTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		055F693EFEA4AB6776BD1310 /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_Phone_Buyer_Guide_Clean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14EBFA219728C4DF5E202C71 /* Pods-Mobile Phone Buyer Guide Clean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide Clean.release.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide Clean/Pods-Mobile Phone Buyer Guide Clean.release.xcconfig"; sourceTree = "<group>"; };
+		952E0CCD89E46C3ED4614298 /* Pods-Mobile Phone Buyer Guide Clean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide Clean.debug.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide Clean/Pods-Mobile Phone Buyer Guide Clean.debug.xcconfig"; sourceTree = "<group>"; };
+		A0C9F219231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Phone Buyer Guide Clean.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C9F21C231CBB2400FB4232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0C9F223231CBB2400FB4232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0C9F226231CBB2400FB4232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A0C9F228231CBB2400FB4232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0C9F22F231CBBB900FB4232 /* ProductListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductListStoryboard.storyboard; sourceTree = "<group>"; };
+		A0C9F231231CBBF600FB4232 /* ProductListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListStore.swift; sourceTree = "<group>"; };
+		A0C9F232231CBBF600FB4232 /* ProductListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPresenter.swift; sourceTree = "<group>"; };
+		A0C9F233231CBBF600FB4232 /* ProductListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListWorker.swift; sourceTree = "<group>"; };
+		A0C9F234231CBBF600FB4232 /* ProductListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRouter.swift; sourceTree = "<group>"; };
+		A0C9F235231CBBF600FB4232 /* ProductListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModels.swift; sourceTree = "<group>"; };
+		A0C9F236231CBBF600FB4232 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		A0C9F237231CBBF600FB4232 /* ProductListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractor.swift; sourceTree = "<group>"; };
+		A0C9F238231CBBF600FB4232 /* ProductListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListEntity.swift; sourceTree = "<group>"; };
+		A0C9F241231CC59600FB4232 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A0C9F244231CC98100FB4232 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A0C9F246231CD68A00FB4232 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A0C9F249231D0A7A00FB4232 /* MobileListsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileListsTableViewCell.swift; sourceTree = "<group>"; };
+		A0C9F24A231D0A7A00FB4232 /* MobileListsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MobileListsTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0C9F216231CBB2400FB4232 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BC13F3CCC5BB02D2160F2E /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0C9F210231CBB2400FB4232 = {
+			isa = PBXGroup;
+			children = (
+				A0C9F241231CC59600FB4232 /* Podfile */,
+				A0C9F21B231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean */,
+				A0C9F21A231CBB2400FB4232 /* Products */,
+				FE318E118FDBE8FA627B6B82 /* Pods */,
+				E11A6FE1BF5F56B2225954AB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A0C9F21A231CBB2400FB4232 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9F219231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0C9F21B231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9F21C231CBB2400FB4232 /* AppDelegate.swift */,
+				A0C9F22E231CBB8A00FB4232 /* ProductList */,
+				A0C9F223231CBB2400FB4232 /* Assets.xcassets */,
+				A0C9F225231CBB2400FB4232 /* LaunchScreen.storyboard */,
+				A0C9F244231CC98100FB4232 /* Constants.swift */,
+				A0C9F246231CD68A00FB4232 /* Extension.swift */,
+				A0C9F228231CBB2400FB4232 /* Info.plist */,
+			);
+			path = "Mobile Phone Buyer Guide Clean";
+			sourceTree = "<group>";
+		};
+		A0C9F22E231CBB8A00FB4232 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9F248231D0A6D00FB4232 /* UI */,
+				A0C9F234231CBBF600FB4232 /* ProductListRouter.swift */,
+				A0C9F236231CBBF600FB4232 /* ProductListViewController.swift */,
+				A0C9F237231CBBF600FB4232 /* ProductListInteractor.swift */,
+				A0C9F233231CBBF600FB4232 /* ProductListWorker.swift */,
+				A0C9F231231CBBF600FB4232 /* ProductListStore.swift */,
+				A0C9F232231CBBF600FB4232 /* ProductListPresenter.swift */,
+				A0C9F235231CBBF600FB4232 /* ProductListModels.swift */,
+				A0C9F238231CBBF600FB4232 /* ProductListEntity.swift */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		A0C9F248231D0A6D00FB4232 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9F22F231CBBB900FB4232 /* ProductListStoryboard.storyboard */,
+				A0C9F249231D0A7A00FB4232 /* MobileListsTableViewCell.swift */,
+				A0C9F24A231D0A7A00FB4232 /* MobileListsTableViewCell.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E11A6FE1BF5F56B2225954AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				055F693EFEA4AB6776BD1310 /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE318E118FDBE8FA627B6B82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				952E0CCD89E46C3ED4614298 /* Pods-Mobile Phone Buyer Guide Clean.debug.xcconfig */,
+				14EBFA219728C4DF5E202C71 /* Pods-Mobile Phone Buyer Guide Clean.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0C9F218231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0C9F22B231CBB2400FB4232 /* Build configuration list for PBXNativeTarget "Mobile Phone Buyer Guide Clean" */;
+			buildPhases = (
+				05AEBC9FFC47CF5324671B10 /* [CP] Check Pods Manifest.lock */,
+				A0C9F215231CBB2400FB4232 /* Sources */,
+				A0C9F216231CBB2400FB4232 /* Frameworks */,
+				A0C9F217231CBB2400FB4232 /* Resources */,
+				4C33D7FD4EFA5D868ADD7A63 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mobile Phone Buyer Guide Clean";
+			productName = "Mobile Phone Buyer Guide Clean";
+			productReference = A0C9F219231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0C9F211231CBB2400FB4232 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = SCB;
+				TargetAttributes = {
+					A0C9F218231CBB2400FB4232 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = A0C9F214231CBB2400FB4232 /* Build configuration list for PBXProject "Mobile Phone Buyer Guide Clean" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0C9F210231CBB2400FB4232;
+			productRefGroup = A0C9F21A231CBB2400FB4232 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0C9F218231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0C9F217231CBB2400FB4232 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C9F227231CBB2400FB4232 /* LaunchScreen.storyboard in Resources */,
+				A0C9F224231CBB2400FB4232 /* Assets.xcassets in Resources */,
+				A0C9F242231CC59600FB4232 /* Podfile in Resources */,
+				A0C9F230231CBBB900FB4232 /* ProductListStoryboard.storyboard in Resources */,
+				A0C9F24C231D0A7A00FB4232 /* MobileListsTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05AEBC9FFC47CF5324671B10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mobile Phone Buyer Guide Clean-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C33D7FD4EFA5D868ADD7A63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobile Phone Buyer Guide Clean/Pods-Mobile Phone Buyer Guide Clean-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobile Phone Buyer Guide Clean/Pods-Mobile Phone Buyer Guide Clean-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile Phone Buyer Guide Clean/Pods-Mobile Phone Buyer Guide Clean-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0C9F215231CBB2400FB4232 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C9F21D231CBB2400FB4232 /* AppDelegate.swift in Sources */,
+				A0C9F23B231CBBF600FB4232 /* ProductListWorker.swift in Sources */,
+				A0C9F23E231CBBF600FB4232 /* ProductListViewController.swift in Sources */,
+				A0C9F23A231CBBF600FB4232 /* ProductListPresenter.swift in Sources */,
+				A0C9F247231CD68A00FB4232 /* Extension.swift in Sources */,
+				A0C9F239231CBBF600FB4232 /* ProductListStore.swift in Sources */,
+				A0C9F245231CC98100FB4232 /* Constants.swift in Sources */,
+				A0C9F24B231D0A7A00FB4232 /* MobileListsTableViewCell.swift in Sources */,
+				A0C9F23C231CBBF600FB4232 /* ProductListRouter.swift in Sources */,
+				A0C9F240231CBBF600FB4232 /* ProductListEntity.swift in Sources */,
+				A0C9F23F231CBBF600FB4232 /* ProductListInteractor.swift in Sources */,
+				A0C9F23D231CBBF600FB4232 /* ProductListModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A0C9F225231CBB2400FB4232 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0C9F226231CBB2400FB4232 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A0C9F229231CBB2400FB4232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A0C9F22A231CBB2400FB4232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A0C9F22C231CBB2400FB4232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 952E0CCD89E46C3ED4614298 /* Pods-Mobile Phone Buyer Guide Clean.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554XY4H2M3;
+				INFOPLIST_FILE = "Mobile Phone Buyer Guide Clean/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scb.ios.Mobile-Phone-Buyer-Guide-Clean";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0C9F22D231CBB2400FB4232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14EBFA219728C4DF5E202C71 /* Pods-Mobile Phone Buyer Guide Clean.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554XY4H2M3;
+				INFOPLIST_FILE = "Mobile Phone Buyer Guide Clean/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scb.ios.Mobile-Phone-Buyer-Guide-Clean";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0C9F214231CBB2400FB4232 /* Build configuration list for PBXProject "Mobile Phone Buyer Guide Clean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0C9F229231CBB2400FB4232 /* Debug */,
+				A0C9F22A231CBB2400FB4232 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0C9F22B231CBB2400FB4232 /* Build configuration list for PBXNativeTarget "Mobile Phone Buyer Guide Clean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0C9F22C231CBB2400FB4232 /* Debug */,
+				A0C9F22D231CBB2400FB4232 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A0C9F211231CBB2400FB4232 /* Project object */;
+}

@@ -1,2 +1,3 @@
 # Mobile-Phone-Buyer-Guide-VIP
-use Clean Swift
+
+# Please Run command => pod install  !!!!!
