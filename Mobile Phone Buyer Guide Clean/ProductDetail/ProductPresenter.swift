@@ -25,7 +25,7 @@ class ProductPresenter: ProductPresenterInterface {
   
   func presentImage(response: Product.GetImage.Response) {
     switch response.images {
-    case .success(let data):
+    case .success(var data):
       let viewModel = Product.GetImage.ViewModel(displayImages: data)
       viewController.displayImages(viewModel: viewModel)
     case .failure(let error):

@@ -25,7 +25,7 @@ import Foundation
 // MARK: - MobileImageResponseElement
 struct MobileImageResponseElement: Codable {
   let mobileID: Int
-  let url: String
+  var url: String
   let id: Int
   
   enum CodingKeys: String, CodingKey {
