@@ -44,7 +44,7 @@ class ProductListInteractor: ProductListInteractorInterface {
         self?.presenter.presentMobile(response: response)
       case .failure(let error):
         let response = ProductList.Mobile.Response(mobileList: Result.failure(error))
-        print(error)
+        self?.presenter.presentMobile(response: response)
       }
     })
   }

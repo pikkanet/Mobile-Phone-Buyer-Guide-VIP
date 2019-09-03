@@ -63,5 +63,9 @@ struct ProductList {
     struct ViewModel {
       let displayMobile: [NewMobile]
     }
+    
+    struct ErrorModel {
+      let errorModel: Error
+    }
   }
 }

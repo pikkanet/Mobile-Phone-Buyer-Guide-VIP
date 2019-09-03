@@ -11,6 +11,7 @@ import UIKit
 
 protocol ProductListViewControllerInterface: class {
   func displayMobile(viewModel: ProductList.Mobile.ViewModel)
+  func displayError(errorModel: ProductList.Mobile.ErrorModel)
 }
 
 protocol MyCellDelegate: class {
@@ -75,8 +76,6 @@ class ProductListViewController: UIViewController, ProductListViewControllerInte
   
   func setupTableView() {
     mTableView.register(UINib(nibName: MobileListsTableViewCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: MobileListsTableViewCell.identifier)
-//    mTableView.estimatedRowHeight = 110
-//    mTableView.rowHeight = UITableView.automaticDimension
   }
   
   func doGetPhoneListOnLoad() {
@@ -89,21 +88,22 @@ class ProductListViewController: UIViewController, ProductListViewControllerInte
     self.mTableView.reloadData()
   }
   
-  // MARK: - Router
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    let data = sender as! ProductList.Mobile.ViewModel.NewMobile
-//    router.passDataToNextScene(segue: segue, data: data)
-  }
-  
-  @IBAction func unwindToProductListViewController(from segue: UIStoryboardSegue) {
-    print("unwind...")
-//    router.passDataToNextScene(segue: segue, data: )
+  func displayError(errorModel: ProductList.Mobile.ErrorModel) {
+    print("%%%%%%%%%%%%%%%%%")
+    showErrorAlert(error: errorModel.errorModel)
+//    print(errorModel.errorModel.localizedDescription)
   }
   
   func sortMobiles(type: ProductList.SortMobile.Request.SortType){
     let request = ProductList.SortMobile.Request(type: type)
     interactor.sortPhoneList(request: request)
+  }
+  
+  
+  func showErrorAlert(error: Error) {
+    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+    present(alert, animated: true, completion: nil)
   }
   
 }
