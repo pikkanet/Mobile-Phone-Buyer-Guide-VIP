@@ -19,6 +19,28 @@ struct ProductList {
     struct ViewModel {}
   }
   
+  struct Filter {
+    struct Request {
+      enum FilterType {
+        case All
+        case Favourite
+      }
+      let type: FilterType
+    }
+  }
+  
+  struct DeleteRow {
+    struct Request {
+      let index: Int
+    }
+  }
+  
+  struct AddToFavourite {
+    struct Request {
+      let index: Int
+    }
+  }
+  
   struct SortMobile {
     struct Request {
       enum SortType {
@@ -28,10 +50,6 @@ struct ProductList {
       }
       let type: SortType
     }
-    /// Data struct sent to Presenter
-    struct Response {}
-    /// Data struct sent to ViewController
-    struct ViewModel {}
   }
   
   struct Mobile {
@@ -43,14 +61,6 @@ struct ProductList {
     }
     /// Data struct sent to ViewController
     struct ViewModel {
-      struct NewMobile {
-        let id: Int
-        let thumbImageURL: String
-        let brand, name, price, rating: String
-        var isFavourite: Bool? = false
-        let mobileResponseDescription: String
-      }
-      
       let displayMobile: [NewMobile]
     }
   }

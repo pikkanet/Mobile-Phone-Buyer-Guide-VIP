@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cia-cK-bnY">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Product View Controller-->
+        <scene sceneID="zmW-JV-5j6">
+            <objects>
+                <viewController storyboardIdentifier="productDetail" id="cia-cK-bnY" customClass="ProductViewController" customModule="Mobile_Phone_Buyer_Guide_Clean" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bXW-8A-ajx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gh7-Xa-guD">
+                                <rect key="frame" x="0.0" y="150" width="414" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gc4-xO-sbZ">
+                                    <size key="itemSize" width="220" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="v9q-G8-Eax" customClass="ImageCollectionViewCell" customModule="Mobile_Phone_Buyer_Guide_Clean" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="35.5" width="220" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="220" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbx-TT-3U1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="200"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person2" translatesAutoresizingMaskIntoConstraints="NO" id="rXb-vr-IRd">
+                                                            <rect key="frame" x="20" y="20" width="180" height="160"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="rXb-vr-IRd" firstAttribute="leading" secondItem="Tbx-TT-3U1" secondAttribute="leading" constant="20" id="K60-7l-cp8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="rXb-vr-IRd" secondAttribute="bottom" constant="20" id="Vmk-Hc-UBc"/>
+                                                        <constraint firstItem="rXb-vr-IRd" firstAttribute="top" secondItem="Tbx-TT-3U1" secondAttribute="top" constant="20" id="aeR-op-B5r"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rXb-vr-IRd" secondAttribute="trailing" constant="20" id="fdX-hJ-NVv"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Tbx-TT-3U1" secondAttribute="trailing" id="aoO-Jm-Gug"/>
+                                            <constraint firstItem="Tbx-TT-3U1" firstAttribute="leading" secondItem="v9q-G8-Eax" secondAttribute="leading" id="gU5-ET-YZP"/>
+                                            <constraint firstItem="Tbx-TT-3U1" firstAttribute="top" secondItem="v9q-G8-Eax" secondAttribute="top" id="pI4-XA-bjk"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tbx-TT-3U1" secondAttribute="bottom" id="wNs-Xl-v5L"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="mImage" destination="rXb-vr-IRd" id="lw6-Sk-eUy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="cia-cK-bnY" id="ztP-zV-DKD"/>
+                                    <outlet property="delegate" destination="cia-cK-bnY" id="0Bt-Wj-hSe"/>
+                                </connections>
+                            </collectionView>
+                            <view alpha="0.77999997138977051" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JT5-fe-tqZ">
+                                <rect key="frame" x="0.0" y="118" width="414" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.77999997138977051" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1R-sc-qbZ">
+                                        <rect key="frame" x="20" y="3" width="148" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.77999997138977051" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="not-ZM-Df6">
+                                        <rect key="frame" x="207" y="3" width="187" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.77999997138977051" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgB-jR-Ass">
+                                <rect key="frame" x="20" y="405" width="374" height="258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CaP-sY-RP1"/>
+                    </view>
+                    <connections>
+                        <outlet property="mCollectionView" destination="gh7-Xa-guD" id="IxQ-O1-8Hv"/>
+                        <outlet property="mProductDescription" destination="WgB-jR-Ass" id="Pqi-EE-3ap"/>
+                        <outlet property="mProductPrice" destination="not-ZM-Df6" id="y0x-vp-gSD"/>
+                        <outlet property="mProductRate" destination="M1R-sc-qbZ" id="SV7-FJ-ZYe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K4U-AC-br7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1795.6521739130437" y="663.61607142857144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person2" width="300" height="300"/>
+    </resources>
+</document>

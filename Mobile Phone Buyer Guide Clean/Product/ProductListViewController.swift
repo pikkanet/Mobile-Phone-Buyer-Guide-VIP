@@ -10,14 +10,17 @@ import Kingfisher
 import UIKit
 
 protocol ProductListViewControllerInterface: class {
-  func displaySomething(viewModel: ProductList.Something.ViewModel)
   func displayMobile(viewModel: ProductList.Mobile.ViewModel)
+}
+
+protocol MyCellDelegate: class {
+  func didTapButtonInCell(_ cell: MobileListsTableViewCell)
 }
 
 class ProductListViewController: UIViewController, ProductListViewControllerInterface {
   var interactor: ProductListInteractorInterface!
   var router: ProductListRouter!
-  var displayTableView: [ProductList.Mobile.ViewModel.NewMobile] = []
+  var displayTableView: [NewMobile] = []
   
   @IBOutlet weak var mAllButton:UIButton!
   @IBOutlet weak var mFavouriteButton:UIButton!
@@ -57,9 +60,9 @@ class ProductListViewController: UIViewController, ProductListViewControllerInte
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     setupNavigationBar()
     setupTableView()
-    doSomethingOnLoad()
     doGetPhoneListOnLoad()
   }
   
@@ -81,38 +84,21 @@ class ProductListViewController: UIViewController, ProductListViewControllerInte
     interactor.doGetPhoneList(request: request)
   }
   
-  
-  func doSomethingOnLoad() {
-    // NOTE: Ask the Interactor to do some work
-    
-    let request = ProductList.Something.Request()
-    interactor.doSomething(request: request)
-  }
-  
-  // MARK: - Display logic
-  
-  func displaySomething(viewModel: ProductList.Something.ViewModel) {
-    // NOTE: Display the result from the Presenter
-    
-    // nameTextField.text = viewModel.name
-  }
-  
   func displayMobile(viewModel: ProductList.Mobile.ViewModel) {
-//    print(viewModel)
     self.displayTableView = viewModel.displayMobile
-//    print(self.displayTableView)
     self.mTableView.reloadData()
   }
   
   // MARK: - Router
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    router.passDataToNextScene(segue: segue)
+//    let data = sender as! ProductList.Mobile.ViewModel.NewMobile
+//    router.passDataToNextScene(segue: segue, data: data)
   }
   
   @IBAction func unwindToProductListViewController(from segue: UIStoryboardSegue) {
     print("unwind...")
-    router.passDataToNextScene(segue: segue)
+//    router.passDataToNextScene(segue: segue, data: )
   }
   
   func sortMobiles(type: ProductList.SortMobile.Request.SortType){
@@ -126,16 +112,17 @@ extension ProductListViewController {
   
   @objc func onSort(){
     let alert = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
+    let sortType = ProductList.SortMobile.Request.SortType.self
     alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {(_: UIAlertAction!) in
-      self.sortMobiles(type: ProductList.SortMobile.Request.SortType.priceLowToHigh)
+      self.sortMobiles(type: sortType.priceLowToHigh)
       self.mTableView.reloadData()
     }))
     alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {(_: UIAlertAction!) in
-      self.sortMobiles(type: ProductList.SortMobile.Request.SortType.priceHighToLow)
+      self.sortMobiles(type: sortType.priceHighToLow)
       self.mTableView.reloadData()
     }))
     alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {(_: UIAlertAction!) in
-      self.sortMobiles(type: ProductList.SortMobile.Request.SortType.rate)
+      self.sortMobiles(type: sortType.rate)
       self.mTableView.reloadData()
     }))
     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -143,7 +130,8 @@ extension ProductListViewController {
   }
   
   @IBAction func onClickAll(_ sender: Any) {
-    print("All")
+    let request = ProductList.Filter.Request(type: ProductList.Filter.Request.FilterType.All)
+    interactor.filterPhoneList(request: request)
     self.isFavorite = false
     self.mTableView.reloadData()
     self.mAllButton.alpha = 0.78
@@ -151,7 +139,8 @@ extension ProductListViewController {
   }
   
   @IBAction func onClickFavorite(_ sender: Any) {
-    print("Fav")
+    let request = ProductList.Filter.Request(type: ProductList.Filter.Request.FilterType.Favourite)
+    interactor.filterPhoneList(request: request)
     self.isFavorite = true
     self.mTableView.reloadData()
     self.mAllButton.alpha = 0.38
@@ -159,7 +148,12 @@ extension ProductListViewController {
   }
 }
 
-extension ProductListViewController: UITableViewDataSource, UITableViewDelegate {
+extension ProductListViewController: UITableViewDataSource, UITableViewDelegate, MyCellDelegate {
+  func didTapButtonInCell(_ cell: MobileListsTableViewCell) {
+    let request = ProductList.AddToFavourite.Request(index: cell.favouriteButton.tag)
+    interactor.addToFavourite(request: request)
+  }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.displayTableView.count
   }
@@ -170,13 +164,14 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     let viewModel = displayTableView[indexPath.row]
     cell.setCell(with: viewModel)
-    
+    cell.favouriteButton.tag = indexPath.row
+    cell.delegate = self as MyCellDelegate
     return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    router.navigateToDetailPage(data: displayTableView[indexPath.row])
     tableView.deselectRow(at: indexPath, animated: true)
-    print(indexPath.row)
   }
   
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -188,7 +183,8 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate 
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      self.mTableView.deleteRows(at: [indexPath], with: .fade)
+      let request = ProductList.DeleteRow.Request(index: indexPath.row)
+      interactor.deletePhoneList(request: request)
     }
     self.mTableView.reloadData()
   }

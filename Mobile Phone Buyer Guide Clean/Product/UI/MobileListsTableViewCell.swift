@@ -18,6 +18,7 @@ class MobileListsTableViewCell: UITableViewCell {
   @IBOutlet weak var productImageView:UIImageView!
   
   static let identifier = "MobileListsTableViewCell"
+  weak var delegate: MyCellDelegate?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -30,13 +31,18 @@ class MobileListsTableViewCell: UITableViewCell {
     // Configure the view for the selected state
   }
   
-  func setCell(with viewModel: ProductList.Mobile.ViewModel.NewMobile) {
+  func setCell(with viewModel: NewMobile) {
     productNameLabel.text = viewModel.name
     productRateLabel.text = viewModel.rating
     productPriceLabel.text = viewModel.price
     productDescriptionLabel.text = viewModel.mobileResponseDescription
     let image = UIImage(named: "Image_not_Found")
     productImageView.kf.setImage(with: URL(string: viewModel.thumbImageURL), placeholder: image)
+    favouriteButton.isSelected = viewModel.isFavourite ?? false
+  }
+  
+  @IBAction func didTapButton(sender: UIButton) {
+    delegate?.didTapButtonInCell(self)
   }
   
 }

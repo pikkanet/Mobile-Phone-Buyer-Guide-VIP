@@ -21,13 +21,6 @@ import Foundation
 
 class ProductListStore: ProductListStoreProtocol {
   
-  func getData(_ completion: @escaping (Result<Entity>) -> Void) {
-    // Simulates an asynchronous background thread that calls back on the main thread after 2 seconds
-    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-      completion(Result.success(Entity()))
-    }
-  }
-  
   func getMobiles(_ completion: @escaping (Result<MobileResponse>) -> Void){
     var request = URLRequest(url: URL(string: "https://scb-test-mobile.herokuapp.com/api/mobiles/")!)
     request.httpMethod = "GET"

@@ -10,12 +10,23 @@ import UIKit
 
 protocol ProductListRouterInput {
   func navigateToSomewhere()
+  func navigateToDetailPage(data: NewMobile)
 }
 
 class ProductListRouter: ProductListRouterInput {
+  
   weak var viewController: ProductListViewController!
 
   // MARK: - Navigation
+  
+  func navigateToDetailPage(data: NewMobile) {
+    
+    let storyboard = UIStoryboard(name: "ProductDetail", bundle: nil)
+    let vc = storyboard.instantiateViewController(withIdentifier: "productDetail") as! ProductViewController
+    vc.interactor.mobile = data
+    viewController.navigationController?.pushViewController(vc, animated: true)
+    
+  }
 
   func navigateToSomewhere() {
     // NOTE: Teach the router how to navigate to another scene. Some examples follow:
@@ -37,10 +48,10 @@ class ProductListRouter: ProductListRouterInput {
 
   // MARK: - Communication
 
-  func passDataToNextScene(segue: UIStoryboardSegue) {
+  func passDataToNextScene(segue: UIStoryboardSegue, data: NewMobile) {
     // NOTE: Teach the router which scenes it can communicate with
-
-    if segue.identifier == "ShowSomewhereScene" {
+    print(data)
+    if segue.identifier == "showDetail" {
       passDataToSomewhereScene(segue: segue)
     }
   }

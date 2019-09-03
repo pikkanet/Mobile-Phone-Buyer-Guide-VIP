@@ -21,16 +21,10 @@ import Foundation
 
  */
 
-enum Result<T> {
-  case success(T)
-  case failure(Error)
-}
 
 //
 // The entity or business object
 //
-struct Entity {}
-
 
 struct MobileResponseElement: Codable {
   let rating: Double
@@ -49,17 +43,3 @@ struct MobileResponseElement: Codable {
 }
 
 typealias MobileResponse = [MobileResponseElement]
-
-// MARK: - MobileImageResponseElement
-struct MobileImageResponseElement: Codable {
-  let mobileID: Int
-  let url: String
-  let id: Int
-  
-  enum CodingKeys: String, CodingKey {
-    case mobileID = "mobile_id"
-    case url, id
-  }
-}
-
-typealias MobileImageResponse = [MobileImageResponseElement]
