@@ -12,6 +12,7 @@ import Kingfisher
 protocol ProductViewControllerInterface: class {
   func displayMobile(viewModel: Product.SetData.ViewModel)
   func displayImages(viewModel: Product.GetImage.ViewModel)
+  func displayError(errorModel: Product.GetImage.ErrorModel)
 }
 
 class ProductViewController: UIViewController, ProductViewControllerInterface {
@@ -97,6 +98,17 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
     self.mCollectionView.reloadData()
 //    print(viewModel)
   }
+  
+  func displayError(errorModel: Product.GetImage.ErrorModel) {
+    showErrorAlert(error: errorModel.displayError)
+  }
+  
+  func showErrorAlert(error: Error) {
+    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+    present(alert, animated: true, completion: nil)
+  }
+  
   
 }
 

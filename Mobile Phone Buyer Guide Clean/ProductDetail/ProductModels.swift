@@ -36,6 +36,10 @@ struct Product {
     struct ViewModel {
       let displayImages: MobileImageResponse
     }
+    
+    struct ErrorModel {
+      let displayError: Error
+    }
   }
 
 }

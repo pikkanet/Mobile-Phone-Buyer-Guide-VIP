@@ -35,7 +35,8 @@ class ProductInteractor: ProductInteractorInterface {
         self.presenter.presentImage(response: response)
 //        print(data)
       case .failure(let error):
-        print(error)
+        let response = Product.GetImage.Response(images: Result.failure(error))
+        self.presenter.presentImage(response: response)
       }
       
     })

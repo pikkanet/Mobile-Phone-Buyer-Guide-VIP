@@ -29,7 +29,9 @@ class ProductPresenter: ProductPresenterInterface {
       let viewModel = Product.GetImage.ViewModel(displayImages: data)
       viewController.displayImages(viewModel: viewModel)
     case .failure(let error):
-      print(error)
+      let errorModel = Product.GetImage.ErrorModel(displayError: error)
+      viewController.displayError(errorModel: errorModel)
     }
   }
+  
 }
