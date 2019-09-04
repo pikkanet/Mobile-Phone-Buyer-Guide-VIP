@@ -113,15 +113,15 @@ extension ProductListViewController {
   @objc func onSort(){
     let alert = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
     let sortType = ProductList.SortMobile.Request.SortType.self
-    alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {(_: UIAlertAction!) in
+    alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {(_: UIAlertAction) in
       self.sortMobiles(type: sortType.priceLowToHigh)
       self.mTableView.reloadData()
     }))
-    alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {(_: UIAlertAction!) in
+    alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {(_: UIAlertAction) in
       self.sortMobiles(type: sortType.priceHighToLow)
       self.mTableView.reloadData()
     }))
-    alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {(_: UIAlertAction!) in
+    alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {(_: UIAlertAction) in
       self.sortMobiles(type: sortType.rate)
       self.mTableView.reloadData()
     }))

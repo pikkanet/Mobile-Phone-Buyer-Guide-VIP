@@ -83,11 +83,12 @@ class ProductListInteractor: ProductListInteractorInterface {
   }
   
   func deletePhoneList(request: ProductList.DeleteRow.Request) {
-    let i = self.tmp_mobiles?.firstIndex(where: { $0.name == self.mobiles?[request.index].name})
-    self.tmp_mobiles?[i!].isFavourite = false
-    self.mobiles?.remove(at: request.index)
-    let response = ProductList.Mobile.Response(mobileList: Result.success(self.mobiles!))
-    self.presenter.presentMobile(response: response)
+    if let i = self.tmp_mobiles?.firstIndex(where: { $0.name == self.mobiles?[request.index].name}){
+      self.tmp_mobiles?[i].isFavourite = false
+      self.mobiles?.remove(at: request.index)
+      let response = ProductList.Mobile.Response(mobileList: Result.success(self.mobiles!))
+      self.presenter.presentMobile(response: response)
+    }
   }
   
   func addToFavourite(request: ProductList.AddToFavourite.Request) {
