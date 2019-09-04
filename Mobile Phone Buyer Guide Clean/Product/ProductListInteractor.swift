@@ -63,6 +63,7 @@ class ProductListInteractor: ProductListInteractorInterface {
     guard let mobiles = self.mobiles else {
       return
     }
+//    self.tmp_mobiles = self.mobiles
     let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
     self.presenter.presentMobile(response: response)
   }
@@ -71,15 +72,15 @@ class ProductListInteractor: ProductListInteractorInterface {
     switch request.type {
     case .All:
       self.mobiles = self.tmp_mobiles
+      let response = ProductList.Mobile.Response(mobileList: Result.success(self.mobiles!))
+      self.presenter.presentMobile(response: response)
     case .Favourite:
       self.tmp_mobiles = self.mobiles
       self.fav_mobiles = self.mobiles?.filter({ (data) -> Bool in
         return data.isFavourite == true
       })
       self.mobiles = self.fav_mobiles
-    }
-    if let mobiles = self.mobiles {
-      let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
+      let response = ProductList.Mobile.Response(mobileList: Result.success(self.mobiles ?? []))
       self.presenter.presentMobile(response: response)
     }
   }
@@ -88,16 +89,22 @@ class ProductListInteractor: ProductListInteractorInterface {
     if let i = self.tmp_mobiles?.firstIndex(where: { $0.name == self.mobiles?[request.index].name}){
       self.tmp_mobiles?[i].isFavourite = false
       self.mobiles?.remove(at: request.index)
-      if let mobiles = self.mobiles {
-        let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
-        self.presenter.presentMobile(response: response)
-      }
+      let response = ProductList.Mobile.Response(mobileList: Result.success(self.mobiles!))
+      self.presenter.presentMobile(response: response)
     }
   }
   
   func addToFavourite(request: ProductList.AddToFavourite.Request) {
-    self.mobiles?[request.index].isFavourite = true
-    let response = ProductList.Mobile.Response(mobileList: Result.success(self.mobiles!))
+    if self.mobiles?[request.index].isFavourite == true {
+      self.mobiles?[request.index].isFavourite = false
+    } else {
+      self.mobiles?[request.index].isFavourite = true
+    }
+    //    self.mobiles?[request.index].isFavourite = true
+    guard let mobiles = self.mobiles else {
+      return
+    }
+    let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
     self.presenter.presentMobile(response: response)
   }
 }
