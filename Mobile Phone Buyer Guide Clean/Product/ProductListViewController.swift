@@ -162,6 +162,12 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate,
     guard let cell = tableView.dequeueReusableCell(withIdentifier: MobileListsTableViewCell.identifier, for: indexPath) as? MobileListsTableViewCell else {
       fatalError("Wrong Cell")
     }
+    
+    if self.isFavorite! {
+      cell.favouriteButton.isHidden = true
+    } else {
+      cell.favouriteButton.isHidden = false
+    }
     let viewModel = displayTableView[indexPath.row]
     cell.setCell(with: viewModel)
     cell.favouriteButton.tag = indexPath.row
