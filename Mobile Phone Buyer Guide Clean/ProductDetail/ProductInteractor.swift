@@ -28,27 +28,16 @@ class ProductInteractor: ProductInteractorInterface {
   }
   
   func getImage(request: Product.GetImage.Request) {
-    worker?.getPhoneImages(index: mobile!.id, { (result) in
+    worker?.getPhoneImages(index: mobile!.id, { [weak self] (result) in
       switch result {
       case .success(let data):
         let response = Product.GetImage.Response(images: Result.success(data))
-        self.presenter.presentImage(response: response)
-//        print(data)
+        self?.presenter.presentImage(response: response)
       case .failure(let error):
         let response = Product.GetImage.Response(images: Result.failure(error))
-        self.presenter.presentImage(response: response)
+        self?.presenter.presentImage(response: response)
       }
-      
     })
-//    worker?.getPhoneImages({ [weak self] (result) in
-//      switch result {
-//      case .success(let data):
-//        let response = ProductList.Mobile.Response(mobileList: Result.success(self!.mobiles!))
-//        self?.presenter.presentMobile(response: response)
-//      case .failure(let error):
-//        let response = ProductList.Mobile.Response(mobileList: Result.failure(error))
-//        print(error)
-//      }
-//    })
+
   }
 }

@@ -12,14 +12,10 @@ struct Product {
   /// This structure represents a use case
   
   struct SetData {
-    struct Request {
-      
-    }
-    
+    struct Request {}
     struct Response {
       let mobile: NewMobile
     }
-    
     struct ViewModel {
       let displayMobile: NewMobile
     }
@@ -36,7 +32,6 @@ struct Product {
     struct ViewModel {
       let displayImages: MobileImageResponse
     }
-    
     struct ErrorModel {
       let displayError: Error
     }

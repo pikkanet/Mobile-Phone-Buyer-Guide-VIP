@@ -91,9 +91,7 @@ class ProductListViewController: UIViewController, ProductListViewControllerInte
   }
   
   func displayError(errorModel: ProductList.Mobile.ErrorModel) {
-    print("%%%%%%%%%%%%%%%%%")
     showErrorAlert(error: errorModel.errorModel)
-//    print(errorModel.errorModel.localizedDescription)
   }
   
   func sortMobiles(type: ProductList.SortMobile.Request.SortType){
@@ -104,7 +102,7 @@ class ProductListViewController: UIViewController, ProductListViewControllerInte
   
   func showErrorAlert(error: Error) {
     let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+    alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
     present(alert, animated: true, completion: nil)
   }
   

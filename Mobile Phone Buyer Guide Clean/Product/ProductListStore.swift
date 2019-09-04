@@ -21,7 +21,7 @@ import Foundation
 
 class ProductListStore: ProductListStoreProtocol {
   
-  func getMobiles(_ completion: @escaping (Result<MobileResponse>) -> Void){
+  func getMobiles(_ completion: @escaping ( Result<MobileResponse>) -> Void){
     var request = URLRequest(url: URL(string: "https://scb-test-mobile.herokuapp.com/api/mobiles/")!)
     request.httpMethod = "GET"
     AF.request(request).responseJSON { response in

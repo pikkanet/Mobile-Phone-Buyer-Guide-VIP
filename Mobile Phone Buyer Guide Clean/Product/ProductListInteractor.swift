@@ -20,7 +20,6 @@ class ProductListInteractor: ProductListInteractorInterface {
   
   var presenter: ProductListPresenterInterface!
   var worker: ProductListWorker?
-
   var mobiles: MobileResponse?
   var tmp_mobiles: MobileResponse?
   var fav_mobiles: MobileResponse?

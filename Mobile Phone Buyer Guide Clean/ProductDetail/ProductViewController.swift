@@ -20,9 +20,6 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
   var router: ProductRouter!
   
   var images: MobileImageResponse = []
-  
-  
-//  var mobile: ProductList.Mobile.ViewModel.NewMobile!
 
   @IBOutlet weak var mProductRate:UILabel!
   @IBOutlet weak var mProductPrice:UILabel!
@@ -62,7 +59,6 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
   }
 
   // MARK: - Event handling
-
   
   // MARK: - Router
   
@@ -76,17 +72,7 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
     interactor.getImage(request: request)
   }
 
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    router.passDataToNextScene(segue: segue)
-  }
-
-  @IBAction func unwindToProductViewController(from segue: UIStoryboardSegue) {
-    print("unwind...")
-    router.passDataToNextScene(segue: segue)
-  }
-  
   func displayMobile(viewModel: Product.SetData.ViewModel) {
-//    print(viewModel)
     title = viewModel.displayMobile.name
     mProductDescription.text = viewModel.displayMobile.mobileResponseDescription
     mProductPrice.text = viewModel.displayMobile.price
@@ -96,7 +82,6 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
   func displayImages(viewModel: Product.GetImage.ViewModel) {
     self.images = viewModel.displayImages
     self.mCollectionView.reloadData()
-//    print(viewModel)
   }
   
   func displayError(errorModel: Product.GetImage.ErrorModel) {
@@ -108,7 +93,6 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
     present(alert, animated: true, completion: nil)
   }
-  
   
 }
 
@@ -132,6 +116,5 @@ extension ProductViewController:UICollectionViewDelegateFlowLayout, UICollection
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: UIScreen.main.bounds.width/2, height: (UIScreen.main.bounds.height * 0.35) - 44)
   }
-  
   
 }
