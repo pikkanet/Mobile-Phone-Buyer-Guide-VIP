@@ -175,8 +175,10 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate,
   }
   
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-    if(self.isFavorite!){
-      return UITableViewCell.EditingStyle.delete
+    if let fav = self.isFavorite {
+      if fav {
+        return UITableViewCell.EditingStyle.delete
+      }
     }
     return UITableViewCell.EditingStyle.none
   }

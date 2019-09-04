@@ -20,9 +20,11 @@ class ProductListRouter: ProductListRouterInput {
   
   func navigateToDetailPage(data: NewMobile) {
     let storyboard = UIStoryboard(name: "ProductDetail", bundle: nil)
-    let vc = storyboard.instantiateViewController(withIdentifier: "productDetail") as! ProductViewController
-    vc.interactor.mobile = data
-    viewController.navigationController?.pushViewController(vc, animated: true)
+    guard let productViewController = storyboard.instantiateViewController(withIdentifier: "productDetail") as? ProductViewController else {
+      return
+    }
+    productViewController.interactor.mobile = data
+    viewController.navigationController?.pushViewController(productViewController, animated: true)
   }
 
   // MARK: - Communication
