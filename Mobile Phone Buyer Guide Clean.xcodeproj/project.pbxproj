@@ -36,7 +36,20 @@
 		A0C9F261231D93B600FB4232 /* ProductDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C9F260231D93B600FB4232 /* ProductDetail.storyboard */; };
 		A0C9F264231D96AA00FB4232 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F263231D96AA00FB4232 /* ImageCollectionViewCell.swift */; };
 		A0C9F266231E617E00FB4232 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F265231E617E00FB4232 /* Model.swift */; };
+		A0C9F281231FD05E00FB4232 /* Mobile_Phone_Buyer_Guide_Clean_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F280231FD05E00FB4232 /* Mobile_Phone_Buyer_Guide_Clean_Tests.swift */; };
+		A0C9F28B231FD08700FB4232 /* ProductListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F289231FD08700FB4232 /* ProductListInteractorTests.swift */; };
+		A0C9F28C231FD08700FB4232 /* ProductListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F28A231FD08700FB4232 /* ProductListPresenterTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0C9F283231FD05E00FB4232 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0C9F211231CBB2400FB4232 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0C9F218231CBB2400FB4232;
+			remoteInfo = "Mobile Phone Buyer Guide Clean";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		055F693EFEA4AB6776BD1310 /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_Phone_Buyer_Guide_Clean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +85,11 @@
 		A0C9F260231D93B600FB4232 /* ProductDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetail.storyboard; sourceTree = "<group>"; };
 		A0C9F263231D96AA00FB4232 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0C9F265231E617E00FB4232 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A0C9F27E231FD05E00FB4232 /* Mobile Phone Buyer Guide Clean Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mobile Phone Buyer Guide Clean Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C9F280231FD05E00FB4232 /* Mobile_Phone_Buyer_Guide_Clean_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile_Phone_Buyer_Guide_Clean_Tests.swift; sourceTree = "<group>"; };
+		A0C9F282231FD05E00FB4232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0C9F289231FD08700FB4232 /* ProductListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractorTests.swift; sourceTree = "<group>"; };
+		A0C9F28A231FD08700FB4232 /* ProductListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +101,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0C9F27B231FD05E00FB4232 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +116,7 @@
 			children = (
 				A0C9F241231CC59600FB4232 /* Podfile */,
 				A0C9F21B231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean */,
+				A0C9F27F231FD05E00FB4232 /* Mobile Phone Buyer Guide Clean Tests */,
 				A0C9F21A231CBB2400FB4232 /* Products */,
 				FE318E118FDBE8FA627B6B82 /* Pods */,
 				E11A6FE1BF5F56B2225954AB /* Frameworks */,
@@ -101,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				A0C9F219231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean.app */,
+				A0C9F27E231FD05E00FB4232 /* Mobile Phone Buyer Guide Clean Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +199,25 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		A0C9F27F231FD05E00FB4232 /* Mobile Phone Buyer Guide Clean Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9F288231FD07600FB4232 /* ProductList */,
+				A0C9F280231FD05E00FB4232 /* Mobile_Phone_Buyer_Guide_Clean_Tests.swift */,
+				A0C9F282231FD05E00FB4232 /* Info.plist */,
+			);
+			path = "Mobile Phone Buyer Guide Clean Tests";
+			sourceTree = "<group>";
+		};
+		A0C9F288231FD07600FB4232 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9F289231FD08700FB4232 /* ProductListInteractorTests.swift */,
+				A0C9F28A231FD08700FB4232 /* ProductListPresenterTests.swift */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
 		E11A6FE1BF5F56B2225954AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +257,24 @@
 			productReference = A0C9F219231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A0C9F27D231FD05E00FB4232 /* Mobile Phone Buyer Guide Clean Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0C9F285231FD05E00FB4232 /* Build configuration list for PBXNativeTarget "Mobile Phone Buyer Guide Clean Tests" */;
+			buildPhases = (
+				A0C9F27A231FD05E00FB4232 /* Sources */,
+				A0C9F27B231FD05E00FB4232 /* Frameworks */,
+				A0C9F27C231FD05E00FB4232 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0C9F284231FD05E00FB4232 /* PBXTargetDependency */,
+			);
+			name = "Mobile Phone Buyer Guide Clean Tests";
+			productName = "Mobile Phone Buyer Guide Clean Tests";
+			productReference = A0C9F27E231FD05E00FB4232 /* Mobile Phone Buyer Guide Clean Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -223,6 +287,10 @@
 				TargetAttributes = {
 					A0C9F218231CBB2400FB4232 = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					A0C9F27D231FD05E00FB4232 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = A0C9F218231CBB2400FB4232;
 					};
 				};
 			};
@@ -240,6 +308,7 @@
 			projectRoot = "";
 			targets = (
 				A0C9F218231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean */,
+				A0C9F27D231FD05E00FB4232 /* Mobile Phone Buyer Guide Clean Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +324,13 @@
 				A0C9F230231CBBB900FB4232 /* ProductListStoryboard.storyboard in Resources */,
 				A0C9F24C231D0A7A00FB4232 /* MobileListsTableViewCell.xib in Resources */,
 				A0C9F261231D93B600FB4232 /* ProductDetail.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0C9F27C231FD05E00FB4232 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +408,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0C9F27A231FD05E00FB4232 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C9F28B231FD08700FB4232 /* ProductListInteractorTests.swift in Sources */,
+				A0C9F281231FD05E00FB4232 /* Mobile_Phone_Buyer_Guide_Clean_Tests.swift in Sources */,
+				A0C9F28C231FD08700FB4232 /* ProductListPresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0C9F284231FD05E00FB4232 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0C9F218231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean */;
+			targetProxy = A0C9F283231FD05E00FB4232 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A0C9F225231CBB2400FB4232 /* LaunchScreen.storyboard */ = {
@@ -502,6 +596,46 @@
 			};
 			name = Release;
 		};
+		A0C9F286231FD05E00FB4232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554XY4H2M3;
+				INFOPLIST_FILE = "Mobile Phone Buyer Guide Clean Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scb.ios.Mobile-Phone-Buyer-Guide-Clean-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile Phone Buyer Guide Clean.app/Mobile Phone Buyer Guide Clean";
+			};
+			name = Debug;
+		};
+		A0C9F287231FD05E00FB4232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 554XY4H2M3;
+				INFOPLIST_FILE = "Mobile Phone Buyer Guide Clean Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scb.ios.Mobile-Phone-Buyer-Guide-Clean-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile Phone Buyer Guide Clean.app/Mobile Phone Buyer Guide Clean";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -519,6 +653,15 @@
 			buildConfigurations = (
 				A0C9F22C231CBB2400FB4232 /* Debug */,
 				A0C9F22D231CBB2400FB4232 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0C9F285231FD05E00FB4232 /* Build configuration list for PBXNativeTarget "Mobile Phone Buyer Guide Clean Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0C9F286231FD05E00FB4232 /* Debug */,
+				A0C9F287231FD05E00FB4232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

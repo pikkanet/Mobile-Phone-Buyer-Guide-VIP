@@ -26,13 +26,6 @@ class ProductListInteractor: ProductListInteractorInterface {
   
   // MARK: - Business logic
   
-  func setIsFavouriteToFalse(){
-    for i in 0...self.mobiles!.count-1 {
-      self.mobiles![i].isFavourite = false
-    }
-    self.tmp_mobiles = self.mobiles
-  }
-  
   func doGetPhoneList(request: ProductList.Mobile.Request) {
     worker?.getPhone({ [weak self] (result) in
       switch result {
@@ -41,7 +34,6 @@ class ProductListInteractor: ProductListInteractorInterface {
         guard let mobiles = self?.mobiles else {
           return
         }
-        self?.setIsFavouriteToFalse()
         let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
         self?.presenter.presentMobile(response: response)
       case .failure(let error):
