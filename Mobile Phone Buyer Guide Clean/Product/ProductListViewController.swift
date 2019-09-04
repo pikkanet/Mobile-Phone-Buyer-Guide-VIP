@@ -85,6 +85,8 @@ class ProductListViewController: UIViewController, ProductListViewControllerInte
   
   func displayMobile(viewModel: ProductList.Mobile.ViewModel) {
     self.displayTableView = viewModel.displayMobile
+    mTableView.estimatedRowHeight = 500
+    mTableView.rowHeight = UITableView.automaticDimension
     self.mTableView.reloadData()
   }
   
