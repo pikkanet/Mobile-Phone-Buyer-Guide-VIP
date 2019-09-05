@@ -51,6 +51,18 @@ struct MobileResponseElement: Codable {
     self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
     self.mobileResponseDescription = try container.decodeIfPresent(String.self, forKey: .mobileResponseDescription) ?? ""
   }
+  
+  init(rating: Double, id: Int, thumbImageURL: String, price: Double, brand: String, name: String,isFavourite: Bool, mobileResponseDescription: String) {
+    self.rating = rating
+    self.id = id
+    self.thumbImageURL = thumbImageURL
+    self.price = price
+    self.brand = brand
+    self.name = name
+    self.isFavourite = isFavourite
+    self.mobileResponseDescription = mobileResponseDescription
+  }
+  
 }
 
 typealias MobileResponse = [MobileResponseElement]

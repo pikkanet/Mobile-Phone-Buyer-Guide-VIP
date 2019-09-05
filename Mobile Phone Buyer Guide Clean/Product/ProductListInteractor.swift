@@ -89,7 +89,6 @@ class ProductListInteractor: ProductListInteractorInterface {
         let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
         self.presenter.presentMobile(response: response)
       }
-      
     }
   }
   

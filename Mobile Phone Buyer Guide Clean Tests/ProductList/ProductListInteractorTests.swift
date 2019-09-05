@@ -35,32 +35,21 @@ class ProductListInteractorTests: XCTestCase {
 
   // MARK: - Test doubles
   
-  class ProductListInteractorInterfaceSpy: ProductListInteractorInterface {
+  class ProductListWorkerSpy: ProductListWorker {
+    var getMobilesCalled = false
     
-    var doGetPhoneListCalled = false
-    var sortPhoneListCalled = false
-    var filterPhoneListCalled = false
-    var deletePhoneListCalled = false
-    var addToFavouriteCalled = false
-    
-    func doGetPhoneList(request: ProductList.Mobile.Request) {
-      doGetPhoneListCalled = true
+    override func getPhone(_ completion: @escaping (Result<MobileResponse, Error>) -> Void) {
+      getMobilesCalled = true
+      let response = MobileResponseElement.init(rating: 4.6, id: 1, thumbImageURL: "URL", price: 19.99, brand: "Nike", name: "Foam", isFavourite: true, mobileResponseDescription: "EiEi")
+      completion(.success([response]))
     }
+  }
+  
+  class ProductListPresenterSpy: ProductListPresenterInterface{
+    var presentMobileCalled = false
     
-    func sortPhoneList(request: ProductList.SortMobile.Request) {
-      sortPhoneListCalled = true
-    }
-    
-    func filterPhoneList(request: ProductList.Filter.Request) {
-      filterPhoneListCalled = true
-    }
-    
-    func deletePhoneList(request: ProductList.DeleteRow.Request) {
-      deletePhoneListCalled = true
-    }
-    
-    func addToFavourite(request: ProductList.AddToFavourite.Request) {
-      addToFavouriteCalled = true
+    func presentMobile(response: ProductList.Mobile.Response) {
+      presentMobileCalled = true
     }
     
   }
@@ -70,12 +59,17 @@ class ProductListInteractorTests: XCTestCase {
   func testCallPhoneList() {
     // Given
     // input
-//    let productListInteractorInterfaceSpy = ProductListInteractorInterfaceSpy()
-//    sut
+    let productListPresentSpy = ProductListPresenterSpy()
+    sut.presenter = productListPresentSpy
+    let productListWorkerSpy = ProductListWorkerSpy(store: ProductListStore())
+    sut.worker = productListWorkerSpy
     
     // When
+    let request = ProductList.Mobile.Request()
+    sut.doGetPhoneList(request: request)
 
     // Then
+    XCTAssertTrue(productListWorkerSpy.getMobilesCalled)
     
   }
 }
