@@ -26,7 +26,7 @@ struct Product {
     struct Request {}
     /// Data struct sent to Presenter
     struct Response {
-      let images: Result<MobileImageResponse>
+      let images: Result<MobileImageResponse, Error>
     }
     /// Data struct sent to ViewController
     struct ViewModel {

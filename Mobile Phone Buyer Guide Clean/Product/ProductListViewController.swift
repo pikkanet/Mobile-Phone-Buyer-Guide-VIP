@@ -160,7 +160,7 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate,
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: MobileListsTableViewCell.identifier, for: indexPath) as? MobileListsTableViewCell else {
-      fatalError("Wrong Cell")
+      return UITableViewCell()
     }
     if isFavorite {
       cell.favouriteButton.isHidden = true

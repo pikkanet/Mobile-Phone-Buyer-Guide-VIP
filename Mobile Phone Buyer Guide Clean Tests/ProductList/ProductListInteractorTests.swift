@@ -22,6 +22,7 @@ class ProductListInteractorTests: XCTestCase {
     setupProductListInteractor()
   }
 
+  // clear mem
   override func tearDown() {
     super.tearDown()
   }
@@ -66,11 +67,15 @@ class ProductListInteractorTests: XCTestCase {
 
   // MARK: - Tests
 
-  func testSomething() {
+  func testCallPhoneList() {
     // Given
-
+    // input
+//    let productListInteractorInterfaceSpy = ProductListInteractorInterfaceSpy()
+//    sut
+    
     // When
 
     // Then
+    
   }
 }

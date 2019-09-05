@@ -23,17 +23,22 @@ class ProductInteractor: ProductInteractorInterface {
   // MARK: - Business logic
 
   func setupData(request: Product.SetData.Request) {
-    let response = Product.SetData.ViewModel(displayMobile: mobile!)
-    presenter.presentData(viewModel: response)
+    if let displayMobile = mobile {
+      let response = Product.SetData.ViewModel(displayMobile: displayMobile)
+      presenter.presentData(viewModel: response)
+    }
   }
   
   func getImage(request: Product.GetImage.Request) {
-    worker?.getPhoneImages(index: mobile!.id, { [weak self] (result) in
+    guard let id = mobile?.id else {
+      return
+    }
+    worker?.getPhoneImages(index: id, { [weak self] (result) in
       switch result {
-      case .success(let data):
+      case let .success(data):
         let response = Product.GetImage.Response(images: Result.success(data))
         self?.presenter.presentImage(response: response)
-      case .failure(let error):
+      case let .failure(error):
         let response = Product.GetImage.Response(images: Result.failure(error))
         self?.presenter.presentImage(response: response)
       }

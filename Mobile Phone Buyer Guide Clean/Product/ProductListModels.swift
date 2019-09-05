@@ -57,7 +57,7 @@ struct ProductList {
     struct Request {}
     /// Data struct sent to Presenter
     struct Response {
-      let mobileList: Result<MobileResponse>
+      let mobileList: Result<MobileResponse, Error>
     }
     /// Data struct sent to ViewController
     struct ViewModel {

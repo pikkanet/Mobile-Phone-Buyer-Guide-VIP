@@ -29,14 +29,14 @@ class ProductListInteractor: ProductListInteractorInterface {
   func doGetPhoneList(request: ProductList.Mobile.Request) {
     worker?.getPhone({ [weak self] (result) in
       switch result {
-      case .success(let data):
+      case let .success(data):
         self?.mobiles = data
         guard let mobiles = self?.mobiles else {
           return
         }
         let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
         self?.presenter.presentMobile(response: response)
-      case .failure(let error):
+      case let .failure(error):
         let response = ProductList.Mobile.Response(mobileList: Result.failure(error))
         self?.presenter.presentMobile(response: response)
       }
@@ -68,9 +68,6 @@ class ProductListInteractor: ProductListInteractorInterface {
         let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
         self.presenter.presentMobile(response: response)
       }
-//      self.mobiles = self.tmp_mobiles
-//      let response = ProductList.Mobile.Response(mobileList: Result.success(self.mobiles!))
-//      self.presenter.presentMobile(response: response)
     case .Favourite:
       self.tmp_mobiles = self.mobiles
       self.fav_mobiles = self.mobiles?.filter({ (data) -> Bool in

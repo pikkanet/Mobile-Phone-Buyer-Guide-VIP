@@ -10,7 +10,7 @@ import UIKit
 
 protocol ProductStoreProtocol {
 //  func getData(_ completion: @escaping (Result<Entity>) -> Void)
-  func getImages(index: Int, _ completion: @escaping (Result<MobileImageResponse>) -> Void)
+  func getImages(index: Int, _ completion: @escaping (Result<MobileImageResponse, Error>) -> Void)
 }
 
 class ProductWorker {
@@ -22,7 +22,7 @@ class ProductWorker {
   }
 
   // MARK: - Business Logic
-  func getPhoneImages(index: Int, _ completion: @escaping (Result<MobileImageResponse>) -> Void) {
+  func getPhoneImages(index: Int, _ completion: @escaping (Result<MobileImageResponse, Error>) -> Void) {
     store.getImages(index: index) {
       completion($0)
     }

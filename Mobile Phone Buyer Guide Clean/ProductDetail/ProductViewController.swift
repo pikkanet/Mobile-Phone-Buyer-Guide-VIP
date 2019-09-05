@@ -102,7 +102,9 @@ extension ProductViewController:UICollectionViewDelegateFlowLayout, UICollection
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! ImageCollectionViewCell
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductImageCollectionViewCell.identifier, for: indexPath) as? ProductImageCollectionViewCell else {
+      return UICollectionViewCell()
+    }
     let item = self.images[indexPath.row]
     let image = UIImage(named: "image_not_found")
     if (item.url.contains("http://") || (item.url.contains("https://"))){

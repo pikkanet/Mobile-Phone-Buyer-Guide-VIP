@@ -10,7 +10,7 @@ import UIKit
 
 protocol ProductListStoreProtocol {
 //  func getData(_ completion: @escaping (Result<Entity>) -> Void)
-  func getMobiles(_ completion: @escaping (Result<MobileResponse>) -> Void)
+  func getMobiles(_ completion: @escaping (Result<MobileResponse, Error>) -> Void)
 }
 
 class ProductListWorker {
@@ -24,7 +24,7 @@ class ProductListWorker {
 
   // MARK: - Business Logic
 
-  func getPhone(_ completion: @escaping (Result<MobileResponse>) -> Void) {
+  func getPhone(_ completion: @escaping (Result<MobileResponse, Error>) -> Void) {
     store.getMobiles {
       completion($0)
     }

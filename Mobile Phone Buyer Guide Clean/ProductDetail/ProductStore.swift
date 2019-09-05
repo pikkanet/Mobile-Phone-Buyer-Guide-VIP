@@ -20,15 +20,21 @@ import Foundation
  */
 
 class ProductStore: ProductStoreProtocol {
-  func getImages(index: Int,_ completion: @escaping (Result<MobileImageResponse>) -> Void) {
-    var request = URLRequest(url: URL(string: "https://scb-test-mobile.herokuapp.com/api/mobiles/\(index)/images/")!)
+  func getImages(index: Int,_ completion: @escaping (Result<MobileImageResponse, Error>) -> Void) {
+    guard let url = URL(string: "https://scb-test-mobile.herokuapp.com/api/mobiles/\(index)/images/") else {
+      return
+    }
+    var request = URLRequest(url: url)
     request.httpMethod = "GET"
     AF.request(request).responseJSON { response in
       switch response.result {
       case .success(_):
         do {
+          guard let data = response.data else {
+            return
+          }
           let decoder = JSONDecoder()
-          let result = try decoder.decode(MobileImageResponse.self, from: response.data!)
+          let result = try decoder.decode(MobileImageResponse.self, from: data)
           completion(Result.success(result))
         } catch let error{
           completion(Result.failure(error))
