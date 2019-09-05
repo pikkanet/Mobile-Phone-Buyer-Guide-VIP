@@ -33,6 +33,16 @@ class ProductListPresenterTests: XCTestCase {
   }
 
   // MARK: - Test doubles
+  
+  class ProductListPresenterInterfaceSpy: ProductListPresenterInterface{
+    
+    var presentMobileCalled = false
+    
+    func presentMobile(response: ProductList.Mobile.Response) {
+      presentMobileCalled = true
+    }
+    
+  }
 
   // MARK: - Tests
 

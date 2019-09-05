@@ -28,7 +28,7 @@ class ProductListViewController: UIViewController, ProductListViewControllerInte
   
   var selectedIndex:Int?
   var id:Int?
-  var isFavorite:Bool? = false
+  var isFavorite:Bool = false
   
   @IBOutlet weak var mTableView: UITableView!
   
@@ -162,7 +162,7 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate,
     guard let cell = tableView.dequeueReusableCell(withIdentifier: MobileListsTableViewCell.identifier, for: indexPath) as? MobileListsTableViewCell else {
       fatalError("Wrong Cell")
     }
-    if self.isFavorite! {
+    if isFavorite {
       cell.favouriteButton.isHidden = true
     } else {
       cell.favouriteButton.isHidden = false
@@ -180,10 +180,8 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate,
   }
   
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-    if let fav = self.isFavorite {
-      if fav {
-        return UITableViewCell.EditingStyle.delete
-      }
+    if self.isFavorite {
+      return UITableViewCell.EditingStyle.delete
     }
     return UITableViewCell.EditingStyle.none
   }

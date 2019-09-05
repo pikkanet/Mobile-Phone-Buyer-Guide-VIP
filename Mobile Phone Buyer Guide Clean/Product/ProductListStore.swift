@@ -22,14 +22,20 @@ import Foundation
 class ProductListStore: ProductListStoreProtocol {
   
   func getMobiles(_ completion: @escaping ( Result<MobileResponse>) -> Void){
-    var request = URLRequest(url: URL(string: "https://scb-test-mobile.herokuapp.com/api/mobiles/")!)
+    guard let url = URL(string: "https://scb-test-mobile.herokuapp.com/api/mobiles/") else {
+      return
+    }
+    var request = URLRequest(url: url)
     request.httpMethod = "GET"
     AF.request(request).responseJSON { response in
+      guard let data = response.data else {
+        return
+      }
       switch response.result {
       case .success(_):
         do {
           let decoder = JSONDecoder()
-          let result = try decoder.decode(MobileResponse.self, from: response.data!)
+          let result = try decoder.decode(MobileResponse.self, from: data)
           completion(Result.success(result))
         } catch let error{
           completion(Result.failure(error))
