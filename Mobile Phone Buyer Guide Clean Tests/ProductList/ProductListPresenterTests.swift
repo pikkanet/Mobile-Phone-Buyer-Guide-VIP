@@ -34,13 +34,24 @@ class ProductListPresenterTests: XCTestCase {
 
   // MARK: - Test doubles
   
-  class ProductListPresenterInterfaceSpy: ProductListPresenterInterface{
+  class ProductListViewControllerSpy: ProductListViewControllerInterface {
     
-    var presentMobileCalled = false
+    var viewModel: ProductList.Mobile.ViewModel!
+    var errorModel: ProductList.Mobile.ErrorModel!
     
-    func presentMobile(response: ProductList.Mobile.Response) {
-      presentMobileCalled = true
+    var displayMobileCalled = false
+    var displayErrorCalled = false
+    
+    func displayMobile(viewModel: ProductList.Mobile.ViewModel) {
+      displayMobileCalled = true
+      self.viewModel = viewModel
     }
+    
+    func displayError(errorModel: ProductList.Mobile.ErrorModel) {
+      displayErrorCalled = false
+      self.errorModel = errorModel
+    }
+    
     
   }
 
@@ -48,8 +59,26 @@ class ProductListPresenterTests: XCTestCase {
 
   func testSomething() {
     // Given
+    let productListViewControllerSpy = ProductListViewControllerSpy()
+    sut.viewController = productListViewControllerSpy
 
     // When
+    let elements = MobileResponseElement.init(rating: 4.6, id: 1, thumbImageURL: "URL", price: 19.99, brand: "Nike", name: "Foam", isFavourite: true, mobileResponseDescription: "EiEi")
+    
+    let response = ProductList.Mobile.Response(mobileList: Result.success([elements]))
+    sut.presentMobile(response: response)
+    
+    let displayMobiles = productListViewControllerSpy.viewModel.displayMobile
+    for displayMobile in displayMobiles {
+      XCTAssertEqual(displayMobile.rating, "rating: 4.6")
+      XCTAssertEqual(displayMobile.id, 1)
+      XCTAssertEqual(displayMobile.thumbImageURL, "URL")
+      XCTAssertEqual(displayMobile.price, "price: $19.99")
+      XCTAssertEqual(displayMobile.brand, "Nike")
+      XCTAssertEqual(displayMobile.name, "Foam")
+      XCTAssertEqual(displayMobile.isFavourite, true)
+      XCTAssertEqual(displayMobile.mobileResponseDescription, "EiEi")
+    }
 
     // Then
   }
