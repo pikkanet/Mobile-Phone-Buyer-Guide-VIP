@@ -89,10 +89,8 @@ class ProductListPresenterTests: XCTestCase {
     // When
     let response = ProductList.Mobile.Response(mobileList: Result.failure(ApiError.CallFail))
     sut.presentMobile(response: response)
-//
+
     // Then
-//    let displayError = productListViewControllerSpy.errorModel.errorModel
     XCTAssert(productListViewControllerSpy.displayErrorCalled)
-    
   }
 }
