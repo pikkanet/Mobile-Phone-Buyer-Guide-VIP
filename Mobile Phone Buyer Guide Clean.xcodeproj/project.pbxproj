@@ -187,13 +187,13 @@
 			isa = PBXGroup;
 			children = (
 				A0C9F262231D968D00FB4232 /* UI */,
-				A0C9F250231D939C00FB4232 /* ProductStore.swift */,
+				A0C9F255231D939C00FB4232 /* ProductViewController.swift */,
+				A0C9F256231D939C00FB4232 /* ProductInteractor.swift */,
 				A0C9F251231D939C00FB4232 /* ProductPresenter.swift */,
+				A0C9F250231D939C00FB4232 /* ProductStore.swift */,
 				A0C9F252231D939C00FB4232 /* ProductWorker.swift */,
 				A0C9F253231D939C00FB4232 /* ProductRouter.swift */,
 				A0C9F254231D939C00FB4232 /* ProductModels.swift */,
-				A0C9F255231D939C00FB4232 /* ProductViewController.swift */,
-				A0C9F256231D939C00FB4232 /* ProductInteractor.swift */,
 				A0C9F257231D939C00FB4232 /* ProductEntity.swift */,
 			);
 			path = ProductDetail;
