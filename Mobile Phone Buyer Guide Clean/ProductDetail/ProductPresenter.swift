@@ -20,7 +20,6 @@ class ProductPresenter: ProductPresenterInterface {
   
   func presentData(viewModel: Product.SetData.ViewModel) {
     viewController.displayMobile(viewModel: viewModel)
-//    print(viewModel)
   }
   
   func presentImage(response: Product.GetImage.Response) {

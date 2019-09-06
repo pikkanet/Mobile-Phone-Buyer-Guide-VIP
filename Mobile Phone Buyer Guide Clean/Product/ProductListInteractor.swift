@@ -32,6 +32,7 @@ class ProductListInteractor: ProductListInteractorInterface {
       switch result {
       case let .success(data):
         self?.mobiles = data
+        self?.tmp_mobiles = data
         guard let mobiles = self?.mobiles else {
           return
         }
@@ -70,7 +71,6 @@ class ProductListInteractor: ProductListInteractorInterface {
         self.presenter.presentMobile(response: response)
       }
     case .Favourite:
-      self.tmp_mobiles = self.mobiles
       self.fav_mobiles = self.mobiles?.filter({ (data) -> Bool in
         return data.isFavourite == true
       })
@@ -96,8 +96,10 @@ class ProductListInteractor: ProductListInteractorInterface {
   func addToFavourite(request: ProductList.AddToFavourite.Request) {
     if self.mobiles?[request.index].isFavourite == true {
       self.mobiles?[request.index].isFavourite = false
+      self.tmp_mobiles?[request.index].isFavourite = false
     } else {
       self.mobiles?[request.index].isFavourite = true
+      self.tmp_mobiles?[request.index].isFavourite = true
     }
     //    self.mobiles?[request.index].isFavourite = true
     guard let mobiles = self.mobiles else {
