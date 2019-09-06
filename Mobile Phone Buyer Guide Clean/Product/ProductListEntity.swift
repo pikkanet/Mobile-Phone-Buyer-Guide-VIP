@@ -66,3 +66,16 @@ struct MobileResponseElement: Codable {
 }
 
 typealias MobileResponse = [MobileResponseElement]
+
+extension MobileResponseElement: Equatable {
+  static func == (lhs: MobileResponseElement, rhs: MobileResponseElement) -> Bool {
+    return lhs.name == rhs.name &&
+      lhs.brand == rhs.brand &&
+      lhs.mobileResponseDescription == rhs.mobileResponseDescription &&
+      lhs.id == rhs.id &&
+      lhs.isFavourite == rhs.isFavourite &&
+      lhs.rating == rhs.rating &&
+      lhs.price == rhs.price &&
+      lhs.thumbImageURL == rhs.thumbImageURL
+  }
+}

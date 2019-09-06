@@ -86,6 +86,7 @@ class ProductListInteractorTests: XCTestCase {
     XCTAssertTrue(presenter.presentMobileCalled)
   }
   
+  // not success
   func testCallPhoneListSuccessButEmptyData() {
     // given
     let presenter = ProductListPresenterSpy()
@@ -116,17 +117,13 @@ class ProductListInteractorTests: XCTestCase {
     // When
     let request = ProductList.Mobile.Request()
     sut.doGetPhoneList(request: request)
-//    sut.presenter.
-    
     //then
     XCTAssertTrue(presenter.presentMobileCalled)
   }
   
   func testClickAllButton() {
     // given
-    let mobileElement = MobileResponseElement(rating: 3.5, id: 1, thumbImageURL: "String", price: 19.99, brand: "Nike", name: "Nike", isFavourite: true, mobileResponseDescription: "String")
-    let mobileElement2 = MobileResponseElement(rating: 4.5, id: 2, thumbImageURL: "String", price: 9.99, brand: "Nike", name: "Nike", isFavourite: false, mobileResponseDescription: "String")
-    let mobilesArray = [mobileElement, mobileElement2]
+    let mobilesArray = Seeds.Products.mobiles
     //    let tmp = mobilesArray
     sut.mobiles = mobilesArray
     sut.tmp_mobiles = mobilesArray
@@ -136,17 +133,14 @@ class ProductListInteractorTests: XCTestCase {
     sut.filterPhoneList(request: request)
     
     //then
-    XCTAssertEqual(sut.mobiles?.count, 2)
+    XCTAssertEqual(sut.mobiles?.count, 3)
   }
   
   //  func test
   
   func testClickFavouriteButton() {
     // given
-    let mobileElement = MobileResponseElement(rating: 3.5, id: 1, thumbImageURL: "String", price: 19.99, brand: "Nike", name: "Nike", isFavourite: true, mobileResponseDescription: "String")
-    let mobileElement2 = MobileResponseElement(rating: 4.5, id: 2, thumbImageURL: "String", price: 9.99, brand: "Nike", name: "Nike", isFavourite: false, mobileResponseDescription: "String")
-    let mobilesArray = [mobileElement, mobileElement2]
-    //    let tmp = mobilesArray
+    let mobilesArray = Seeds.Products.mobiles
     sut.mobiles = mobilesArray
     sut.tmp_mobiles = mobilesArray
     
@@ -158,5 +152,99 @@ class ProductListInteractorTests: XCTestCase {
     XCTAssertEqual(sut.mobiles?.count, 1)
   }
   
+  func testSortPriceHighToLow() {
+    // given
+    let mobilesArray = Seeds.Products.mobiles
+    sut.mobiles = mobilesArray
+    sut.tmp_mobiles = mobilesArray
+    
+    // when
+    let request = ProductList.SortMobile.Request(type: .priceHighToLow)
+    sut.sortPhoneList(request: request)
+    
+    // then
+    let expectedResult: MobileResponse = [Seeds.Products.mobileElement, Seeds.Products.mobileElement3, Seeds.Products.mobileElement2]
+    XCTAssertEqual(sut.mobiles, expectedResult)
+    
+  }
+  
+  func testSortPriceLowToHigh() {
+    // given
+    let mobilesArray = Seeds.Products.mobiles
+    sut.mobiles = mobilesArray
+    sut.tmp_mobiles = mobilesArray
+    
+    // when
+    let request = ProductList.SortMobile.Request(type: .priceLowToHigh)
+    sut.sortPhoneList(request: request)
+    
+    // then
+    let expectedResult: MobileResponse = [Seeds.Products.mobileElement2, Seeds.Products.mobileElement3, Seeds.Products.mobileElement]
+    XCTAssertEqual(sut.mobiles, expectedResult)
+  }
+  
+  func testSortPriceRate() {
+    // given
+    let mobilesArray = Seeds.Products.mobiles
+    sut.mobiles = mobilesArray
+    sut.tmp_mobiles = mobilesArray
+    
+    // when
+    let request = ProductList.SortMobile.Request(type: .rate)
+    sut.sortPhoneList(request: request)
+    
+    // then
+    let expectedResult: MobileResponse = [Seeds.Products.mobileElement2, Seeds.Products.mobileElement, Seeds.Products.mobileElement3]
+    XCTAssertEqual(sut.mobiles, expectedResult)
+  }
+  
+  func testClickFavouriteInUnfavourite() {
+    // given
+    let mobilesArray = Seeds.Products.mobiles
+    sut.mobiles = mobilesArray
+    let index = 1
+    // when
+    let request = ProductList.AddToFavourite.Request(index: index)
+    sut.addToFavourite(request: request)
+    
+    // then
+    if let result = sut.mobiles?[index].isFavourite{
+      XCTAssertTrue(result)
+    }
+  }
+  
+  func testClickFavouriteInFavourite() {
+    // given
+    let mobilesArray = Seeds.Products.mobiles
+    sut.mobiles = mobilesArray
+    let index = 0
+    
+    // when
+    let request = ProductList.AddToFavourite.Request(index: index)
+    sut.addToFavourite(request: request)
+    
+    // then
+    if let result = sut.mobiles?[index].isFavourite{
+      XCTAssertFalse(result)
+    }
+  }
+
+  func testRemoveFromFavourite() {
+    // given
+    let mobilesArray = [Seeds.Products.mobileElement, Seeds.Products.mobileElement4]
+    sut.mobiles = mobilesArray
+    sut.tmp_mobiles = Seeds.Products.mobiles
+    let index = 0
+    let mobileCount = sut.mobiles?.count
+    
+    // when
+    let request = ProductList.DeleteRow.Request(index: index)
+    sut.deletePhoneList(request: request)
+    
+    // then
+    let expectedMobileCount = mobileCount! - 1
+    XCTAssertEqual(sut.mobiles?.count, expectedMobileCount )
+    
+  }
   
 }

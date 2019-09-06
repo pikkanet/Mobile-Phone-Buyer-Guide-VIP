@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93BC13F3CCC5BB02D2160F2E /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F693EFEA4AB6776BD1310 /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework */; };
+		A053822623221D0D00163776 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053822523221D0D00163776 /* MockData.swift */; };
 		A0C9F21D231CBB2400FB4232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9F21C231CBB2400FB4232 /* AppDelegate.swift */; };
 		A0C9F224231CBB2400FB4232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C9F223231CBB2400FB4232 /* Assets.xcassets */; };
 		A0C9F227231CBB2400FB4232 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C9F225231CBB2400FB4232 /* LaunchScreen.storyboard */; };
@@ -53,6 +54,7 @@
 		055F693EFEA4AB6776BD1310 /* Pods_Mobile_Phone_Buyer_Guide_Clean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_Phone_Buyer_Guide_Clean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EBFA219728C4DF5E202C71 /* Pods-Mobile Phone Buyer Guide Clean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide Clean.release.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide Clean/Pods-Mobile Phone Buyer Guide Clean.release.xcconfig"; sourceTree = "<group>"; };
 		952E0CCD89E46C3ED4614298 /* Pods-Mobile Phone Buyer Guide Clean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide Clean.debug.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide Clean/Pods-Mobile Phone Buyer Guide Clean.debug.xcconfig"; sourceTree = "<group>"; };
+		A053822523221D0D00163776 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		A0C9F219231CBB2400FB4232 /* Mobile Phone Buyer Guide Clean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Phone Buyer Guide Clean.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C9F21C231CBB2400FB4232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0C9F223231CBB2400FB4232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				A0C9F288231FD07600FB4232 /* ProductList */,
 				A0C9F280231FD05E00FB4232 /* Mobile_Phone_Buyer_Guide_Clean_Tests.swift */,
+				A053822523221D0D00163776 /* MockData.swift */,
 				A0C9F282231FD05E00FB4232 /* Info.plist */,
 			);
 			path = "Mobile Phone Buyer Guide Clean Tests";
@@ -407,6 +410,7 @@
 				A0C9F28B231FD08700FB4232 /* ProductListInteractorTests.swift in Sources */,
 				A0C9F281231FD05E00FB4232 /* Mobile_Phone_Buyer_Guide_Clean_Tests.swift in Sources */,
 				A0C9F28C231FD08700FB4232 /* ProductListPresenterTests.swift in Sources */,
+				A053822623221D0D00163776 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
