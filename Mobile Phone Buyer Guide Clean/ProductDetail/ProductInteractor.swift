@@ -11,7 +11,7 @@ import UIKit
 protocol ProductInteractorInterface {
   var mobile : NewMobile? { get set }
   func setupData(request: Product.SetData.Request)
-  func getImage(request: Product.GetImage.Request)
+  func getImageFromApi(request: Product.GetImage.Request)
 }
 
 class ProductInteractor: ProductInteractorInterface {
@@ -29,7 +29,7 @@ class ProductInteractor: ProductInteractorInterface {
     }
   }
   
-  func getImage(request: Product.GetImage.Request) {
+  func getImageFromApi(request: Product.GetImage.Request) {
     guard let id = mobile?.id else {
       return
     }

@@ -69,7 +69,7 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
   
   func getMobileImage() {
     let request = Product.GetImage.Request()
-    interactor.getImage(request: request)
+    interactor.getImageFromApi(request: request)
   }
 
   func displayMobile(viewModel: Product.SetData.ViewModel) {

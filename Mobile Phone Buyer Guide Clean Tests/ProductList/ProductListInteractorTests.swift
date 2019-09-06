@@ -44,12 +44,6 @@ class ProductListInteractorTests: XCTestCase {
     var getMobilesCalled = false
     
     override func getPhone(_ completion: @escaping (Result<MobileResponse, Error>) -> Void) {
-      //getMobilesCalled = true
-//      if isDataEmpty {
-////        var response = MobileResponse()
-////        response = nil
-//        completion(.success(MobileResponse()))
-//      }
       let response = MobileResponseElement.init(rating: 4.6, id: 1, thumbImageURL: "URL", price: 19.99, brand: "Nike", name: "Foam", isFavourite: true, mobileResponseDescription: "EiEi")
       if isSuccess {
         completion(.success([response]))
@@ -57,7 +51,6 @@ class ProductListInteractorTests: XCTestCase {
         completion(.failure(ApiError.CallFail))
       }
     }
-    
   }
   
   class ProductListPresenterSpy: ProductListPresenterInterface {
@@ -77,7 +70,6 @@ class ProductListInteractorTests: XCTestCase {
     let presenter = ProductListPresenterSpy()
     sut.presenter = presenter
   
-    
     // When
     let request = ProductList.Mobile.Request()
     sut.doGetPhoneList(request: request)
@@ -90,16 +82,15 @@ class ProductListInteractorTests: XCTestCase {
   func testCallPhoneListSuccessButEmptyData() {
     // given
     let presenter = ProductListPresenterSpy()
-    
     sut.presenter = presenter
     let worker = ProductListWorkerSpy(store: ProductListStore())
     worker.isDataEmpty = true
     sut.worker = worker
+    
     // When
     let request = ProductList.Mobile.Request()
     sut.doGetPhoneList(request: request)
     sut.mobiles = nil
-    //    sut.presenter.
     
     //then
     XCTAssertTrue(presenter.presentMobileCalled)
@@ -117,6 +108,7 @@ class ProductListInteractorTests: XCTestCase {
     // When
     let request = ProductList.Mobile.Request()
     sut.doGetPhoneList(request: request)
+    
     //then
     XCTAssertTrue(presenter.presentMobileCalled)
   }
@@ -124,7 +116,6 @@ class ProductListInteractorTests: XCTestCase {
   func testClickAllButton() {
     // given
     let mobilesArray = Seeds.Products.mobiles
-    //    let tmp = mobilesArray
     sut.mobiles = mobilesArray
     sut.tmp_mobiles = mobilesArray
     
@@ -244,7 +235,6 @@ class ProductListInteractorTests: XCTestCase {
     // then
     let expectedMobileCount = mobileCount! - 1
     XCTAssertEqual(sut.mobiles?.count, expectedMobileCount )
-    
   }
   
 }
