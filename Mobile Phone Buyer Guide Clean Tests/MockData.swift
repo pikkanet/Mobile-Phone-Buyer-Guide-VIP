@@ -18,4 +18,10 @@ struct Seeds {
     
     static let mobiles = [mobileElement, mobileElement2, mobileElement3]
   }
+  
+  struct ProductImage {
+    static let mobileImageElement = MobileImageResponseElement(mobileID: 1, url: "www.foamfoam.com", id: 1)
+    static let mobileImageElement2 = MobileImageResponseElement(mobileID: 2, url: "www.foamfoam.com", id: 2)
+    static let mobileImageResponse = [mobileImageElement, mobileImageElement2]
+  }
 }

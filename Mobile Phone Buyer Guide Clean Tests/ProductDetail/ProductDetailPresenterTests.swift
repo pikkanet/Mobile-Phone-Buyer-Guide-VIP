@@ -74,7 +74,33 @@ class ProductDetailPresenterTests: XCTestCase {
     
     // Then
     XCTAssert(productViewControllerInterfaceSpy.isDisplayMobile)
-//    XCTAssert(sut.viewController.i)
+  }
+  
+  func testGetImageFromApiSuccess() {
+    // given
+    let productViewControllerInterfaceSpy = ProductViewControllerInterfaceSpy()
+    sut.viewController = productViewControllerInterfaceSpy
     
+    // when
+  
+    let response = Product.GetImage.Response(images: .success(Seeds.ProductImage.mobileImageResponse))
+    sut.presentImage(response: response)
+    
+    // then
+    XCTAssert(productViewControllerInterfaceSpy.isDisplayImage)
+  }
+  
+  func testGetImageFromApiFailure() {
+    // given
+    let productViewControllerInterfaceSpy = ProductViewControllerInterfaceSpy()
+    sut.viewController = productViewControllerInterfaceSpy
+    
+    // when
+    
+    let response = Product.GetImage.Response(images: .failure(ApiError.CallFail))
+    sut.presentImage(response: response)
+    
+    // then
+    XCTAssert(productViewControllerInterfaceSpy.isDisplayError)
   }
 }
