@@ -69,3 +69,7 @@ struct ProductList {
     }
   }
 }
+
+enum ApiError:Error {
+  case CallFail
+}

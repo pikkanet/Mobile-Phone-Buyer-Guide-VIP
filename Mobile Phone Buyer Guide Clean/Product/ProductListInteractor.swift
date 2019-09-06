@@ -14,6 +14,7 @@ protocol ProductListInteractorInterface {
   func filterPhoneList(request: ProductList.Filter.Request)
   func deletePhoneList(request: ProductList.DeleteRow.Request)
   func addToFavourite(request: ProductList.AddToFavourite.Request)
+  var mobiles: MobileResponse? {get set}
 }
 
 class ProductListInteractor: ProductListInteractorInterface {

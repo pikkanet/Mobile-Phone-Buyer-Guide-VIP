@@ -48,7 +48,7 @@ class ProductListPresenterTests: XCTestCase {
     }
     
     func displayError(errorModel: ProductList.Mobile.ErrorModel) {
-      displayErrorCalled = false
+      displayErrorCalled = true
       self.errorModel = errorModel
     }
     
@@ -57,17 +57,17 @@ class ProductListPresenterTests: XCTestCase {
 
   // MARK: - Tests
 
-  func testSomething() {
+  func testDisplayMobileListSuccess() {
     // Given
     let productListViewControllerSpy = ProductListViewControllerSpy()
     sut.viewController = productListViewControllerSpy
 
     // When
     let elements = MobileResponseElement.init(rating: 4.6, id: 1, thumbImageURL: "URL", price: 19.99, brand: "Nike", name: "Foam", isFavourite: true, mobileResponseDescription: "EiEi")
-    
     let response = ProductList.Mobile.Response(mobileList: Result.success([elements]))
     sut.presentMobile(response: response)
-    
+
+    // Then
     let displayMobiles = productListViewControllerSpy.viewModel.displayMobile
     for displayMobile in displayMobiles {
       XCTAssertEqual(displayMobile.rating, "rating: 4.6")
@@ -79,7 +79,20 @@ class ProductListPresenterTests: XCTestCase {
       XCTAssertEqual(displayMobile.isFavourite, true)
       XCTAssertEqual(displayMobile.mobileResponseDescription, "EiEi")
     }
-
+  }
+  
+  func testDisplayMobileListFailure() {
+    // Given
+    let productListViewControllerSpy = ProductListViewControllerSpy()
+    sut.viewController = productListViewControllerSpy
+    
+    // When
+    let response = ProductList.Mobile.Response(mobileList: Result.failure(ApiError.CallFail))
+    sut.presentMobile(response: response)
+//
     // Then
+//    let displayError = productListViewControllerSpy.errorModel.errorModel
+    XCTAssert(productListViewControllerSpy.displayErrorCalled)
+    
   }
 }
