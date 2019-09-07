@@ -22,8 +22,10 @@ import Foundation
 class ProductListStore: ProductListStoreProtocol {
   
   func getMobiles(_ completion: @escaping ( Result<MobileResponse, Error>) -> Void){
+    
+    // enum
     guard let url = URL(string: "https://scb-test-mobile.herokuapp.com/api/mobiles/") else {
-      return
+      return // add completion
     }
     var request = URLRequest(url: url)
     request.httpMethod = "GET"

@@ -164,13 +164,14 @@ class ProductListInteractorTests: XCTestCase {
     let mobilesArray = Seeds.Products.mobiles
     sut.mobiles = mobilesArray
     sut.tmp_mobiles = mobilesArray
+    let expectedResult: MobileResponse = [Seeds.Products.mobileElement2, Seeds.Products.mobileElement3, Seeds.Products.mobileElement]
     
     // when
     let request = ProductList.SortMobile.Request(type: .priceLowToHigh)
     sut.sortPhoneList(request: request)
     
     // then
-    let expectedResult: MobileResponse = [Seeds.Products.mobileElement2, Seeds.Products.mobileElement3, Seeds.Products.mobileElement]
+    
     XCTAssertEqual(sut.mobiles, expectedResult)
   }
   

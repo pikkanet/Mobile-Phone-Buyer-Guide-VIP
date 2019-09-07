@@ -6,7 +6,6 @@
 //  Copyright (c) 2562 SCB. All rights reserved.
 //
 
-import UIKit
 
 protocol ProductListInteractorInterface {
   func doGetPhoneList(request: ProductList.Mobile.Request)
@@ -48,11 +47,14 @@ class ProductListInteractor: ProductListInteractorInterface {
   func sortPhoneList(request: ProductList.SortMobile.Request) {
     switch request.type {
     case .priceLowToHigh:
-      self.mobiles?.sort(by: { $0.price < $1.price})
+      mobiles?.sort(by: { $0.price < $1.price})
+      self.tmp_mobiles?.sort(by: { $0.price < $1.price})
     case .priceHighToLow:
       self.mobiles?.sort(by: { $0.price > $1.price })
+      self.tmp_mobiles?.sort(by: { $0.price > $1.price })
     case .rate:
       self.mobiles?.sort(by: { $0.rating > $1.rating })
+      self.tmp_mobiles?.sort(by: { $0.rating > $1.rating })
     }
     guard let mobiles = self.mobiles else {
       return
@@ -83,8 +85,8 @@ class ProductListInteractor: ProductListInteractorInterface {
   }
   
   func deletePhoneList(request: ProductList.DeleteRow.Request) {
-    if let i = self.tmp_mobiles?.firstIndex(where: { $0.name == self.mobiles?[request.index].name}){
-      self.tmp_mobiles?[i].isFavourite = false
+    if let index = self.tmp_mobiles?.firstIndex(where: { $0.name == self.mobiles?[request.index].name}){
+      self.tmp_mobiles?[index].isFavourite = false
       self.mobiles?.remove(at: request.index)
       if let mobiles = self.mobiles {
         let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))

@@ -21,10 +21,10 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
   
   var images: MobileImageResponse = []
 
-  @IBOutlet weak var mProductRate:UILabel!
-  @IBOutlet weak var mProductPrice:UILabel!
-  @IBOutlet weak var mProductDescription:UILabel!
-  @IBOutlet weak var mCollectionView:UICollectionView!
+  @IBOutlet weak var mProductRate: UILabel!
+  @IBOutlet weak var mProductPrice: UILabel!
+  @IBOutlet weak var mProductDescription: UILabel!
+  @IBOutlet weak var mCollectionView: UICollectionView!
   
   // MARK: - Object lifecycle
 

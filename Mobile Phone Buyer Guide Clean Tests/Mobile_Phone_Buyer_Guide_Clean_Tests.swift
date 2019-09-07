@@ -6,6 +6,8 @@
 //  Copyright © 2562 SCB. All rights reserved.
 //
 
+// remove
+
 import XCTest
 
 class Mobile_Phone_Buyer_Guide_Clean_Tests: XCTestCase {
