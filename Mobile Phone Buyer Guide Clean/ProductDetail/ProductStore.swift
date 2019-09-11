@@ -9,16 +9,6 @@
 import Alamofire
 import Foundation
 
-/*
-
- The ProductStore class implements the ProductStoreProtocol.
-
- The source for the data could be a database, cache, or a web service.
-
- You may remove these comments from the file.
-
- */
-
 class ProductStore: ProductStoreProtocol {
   func getImages(index: Int,_ completion: @escaping (Result<MobileImageResponse, Error>) -> Void) {
     guard let url = URL(string: "https://scb-test-mobile.herokuapp.com/api/mobiles/\(index)/images/") else {

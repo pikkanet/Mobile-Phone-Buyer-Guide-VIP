@@ -8,10 +8,3 @@
 
 import Foundation
 
-struct NewMobile {
-  let id: Int
-  let thumbImageURL: String
-  let brand, name, price, rating: String
-  var isFavourite: Bool? = false
-  let mobileResponseDescription: String
-}

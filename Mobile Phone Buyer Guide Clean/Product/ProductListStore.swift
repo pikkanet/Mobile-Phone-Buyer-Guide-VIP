@@ -9,16 +9,6 @@
 import Alamofire
 import Foundation
 
-/*
-
- The ProductListStore class implements the ProductListStoreProtocol.
-
- The source for the data could be a database, cache, or a web service.
-
- You may remove these comments from the file.
-
- */
-
 class ProductListStore: ProductListStoreProtocol {
   
   func getMobiles(_ completion: @escaping ( Result<MobileResponse, Error>) -> Void){

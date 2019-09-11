@@ -68,7 +68,7 @@ class ProductDetailPresenterTests: XCTestCase {
     sut.viewController = productViewControllerInterfaceSpy
 
     // When
-    let mobile = NewMobile(id: 1, thumbImageURL: "Url", brand: "Nike", name: "Foam", price: "price: $19.99", rating: "rating: 4.5", isFavourite: true, mobileResponseDescription: "Nike")
+    let mobile = Mobile(id: 1, thumbImageURL: "Url", brand: "Nike", name: "Foam", price: "price: $19.99", rating: "rating: 4.5", isFavourite: true, mobileResponseDescription: "Nike")
     let viewmodel = Product.SetData.ViewModel(displayMobile: mobile)
     sut.presentData(viewModel: viewmodel)
     

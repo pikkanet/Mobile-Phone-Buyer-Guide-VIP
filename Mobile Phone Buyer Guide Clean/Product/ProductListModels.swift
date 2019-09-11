@@ -9,15 +9,6 @@
 import UIKit
 
 struct ProductList {
-  /// This structure represents a use case
-  struct Something {
-    /// Data struct sent to Interactor
-    struct Request {}
-    /// Data struct sent to Presenter
-    struct Response {}
-    /// Data struct sent to ViewController
-    struct ViewModel {}
-  }
   
   struct Filter {
     struct Request {
@@ -69,6 +60,15 @@ struct ProductList {
     }
   }
 }
+
+struct NewMobile {
+  let id: Int
+  let thumbImageURL: String
+  let brand, name, price, rating: String
+  var isFavourite: Bool? = false
+  let mobileResponseDescription: String
+}
+
 
 struct Mobile {
   let id: Int

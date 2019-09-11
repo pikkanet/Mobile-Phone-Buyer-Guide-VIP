@@ -59,7 +59,6 @@ class ProductListInteractor: ProductListInteractorInterface {
     guard let mobiles = self.mobiles else {
       return
     }
-//    self.tmp_mobiles = self.mobiles
     let response = ProductList.Mobile.Response(mobileList: Result.success(mobiles))
     self.presenter.presentMobile(response: response)
   }
@@ -103,7 +102,6 @@ class ProductListInteractor: ProductListInteractorInterface {
       self.mobiles?[request.index].isFavourite = true
       self.tmp_mobiles?[request.index].isFavourite = true
     }
-    //    self.mobiles?[request.index].isFavourite = true
     guard let mobiles = self.mobiles else {
       return
     }
