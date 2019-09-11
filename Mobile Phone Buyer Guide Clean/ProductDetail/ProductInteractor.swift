@@ -9,13 +9,13 @@
 import UIKit
 
 protocol ProductInteractorInterface {
-  var mobile : NewMobile? { get set }
+  var mobile : MobileViewModel? { get set }
   func setupData(request: Product.SetData.Request)
   func getImageFromApi(request: Product.GetImage.Request)
 }
 
 class ProductInteractor: ProductInteractorInterface {
-  var mobile: NewMobile?
+  var mobile: MobileViewModel?
 
   var presenter: ProductPresenterInterface!
   var worker: ProductWorker?

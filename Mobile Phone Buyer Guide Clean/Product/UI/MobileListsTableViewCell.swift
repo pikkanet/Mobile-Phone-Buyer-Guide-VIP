@@ -29,7 +29,7 @@ class MobileListsTableViewCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
   }
   
-  func setCell(with viewModel: NewMobile) {
+  func setCell(with viewModel: MobileViewModel) {
     productNameLabel.text = viewModel.name
     productRateLabel.text = viewModel.rating
     productPriceLabel.text = viewModel.price

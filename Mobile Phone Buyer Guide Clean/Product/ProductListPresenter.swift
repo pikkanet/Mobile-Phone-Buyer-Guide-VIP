@@ -22,10 +22,10 @@ class ProductListPresenter: ProductListPresenterInterface {
   func presentMobile(response: ProductList.Mobile.Response) {
     switch response.mobileList {
     case .success(let data):
-      let models = data.map { (mobile) -> NewMobile in
+      let models = data.map { (mobile) -> MobileViewModel in
         let rate:String = "rating: \(mobile.rating)"
         let price:String = "price: $\(mobile.price)"
-        return NewMobile(id: mobile.id, thumbImageURL: mobile.thumbImageURL, brand: mobile.brand, name: mobile.name, price: price, rating: rate, isFavourite: mobile.isFavourite, mobileResponseDescription: mobile.mobileResponseDescription)
+        return MobileViewModel(id: mobile.id, thumbImageURL: mobile.thumbImageURL, brand: mobile.brand, name: mobile.name, price: price, rating: rate, isFavourite: mobile.isFavourite, mobileResponseDescription: mobile.mobileResponseDescription)
       }
       let viewModel = ProductList.Mobile.ViewModel(displayMobile: models)
       viewController.displayMobile(viewModel: viewModel)

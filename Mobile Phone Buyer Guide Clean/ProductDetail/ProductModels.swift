@@ -14,10 +14,10 @@ struct Product {
   struct SetData {
     struct Request {}
     struct Response {
-      let mobile: NewMobile
+      let mobile: MobileViewModel
     }
     struct ViewModel {
-      let displayMobile: NewMobile
+      let displayMobile: MobileViewModel
     }
   }
   

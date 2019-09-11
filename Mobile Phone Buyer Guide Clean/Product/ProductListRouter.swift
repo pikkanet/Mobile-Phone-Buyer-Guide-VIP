@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProductListRouterInput {
-  func navigateToDetailPage(data: NewMobile)
+  func navigateToDetailPage(data: MobileViewModel)
 }
 
 class ProductListRouter: ProductListRouterInput {
@@ -18,7 +18,7 @@ class ProductListRouter: ProductListRouterInput {
 
   // MARK: - Navigation
   
-  func navigateToDetailPage(data: NewMobile) {
+  func navigateToDetailPage(data: MobileViewModel) {
     let storyboard = UIStoryboard(name: "ProductDetail", bundle: nil)
     guard let productViewController = storyboard.instantiateViewController(withIdentifier: "productDetail") as? ProductViewController else {
       return

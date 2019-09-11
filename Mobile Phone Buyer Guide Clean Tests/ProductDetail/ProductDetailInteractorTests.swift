@@ -71,7 +71,7 @@ class ProductDetailInteractorTests: XCTestCase {
     
     // When
     let request = Product.SetData.Request()
-    sut.mobile = NewMobile(id: 1, thumbImageURL: "Url", brand: "Nike", name: "Foam", price: "19.99", rating: "1.9", isFavourite: true, mobileResponseDescription: "FoamFoam")
+    sut.mobile = MobileViewModel(id: 1, thumbImageURL: "Url", brand: "Nike", name: "Foam", price: "19.99", rating: "1.9", isFavourite: true, mobileResponseDescription: "FoamFoam")
     sut.setupData(request: request)
     
     // Then
@@ -87,7 +87,7 @@ class ProductDetailInteractorTests: XCTestCase {
     sut.worker = worker
     
     // when
-    sut.mobile = NewMobile(id: 1, thumbImageURL: "Url", brand: "Nike", name: "Foam", price: "19.99", rating: "1.9", isFavourite: true, mobileResponseDescription: "FoamFoam")
+    sut.mobile = MobileViewModel(id: 1, thumbImageURL: "Url", brand: "Nike", name: "Foam", price: "19.99", rating: "1.9", isFavourite: true, mobileResponseDescription: "FoamFoam")
     let request = Product.GetImage.Request()
     sut.getImageFromApi(request: request)
     
@@ -104,7 +104,7 @@ class ProductDetailInteractorTests: XCTestCase {
     sut.worker = worker
     
     // when
-    sut.mobile = NewMobile(id: 1, thumbImageURL: "Url", brand: "Nike", name: "Foam", price: "19.99", rating: "1.9", isFavourite: true, mobileResponseDescription: "FoamFoam")
+    sut.mobile = MobileViewModel(id: 1, thumbImageURL: "Url", brand: "Nike", name: "Foam", price: "19.99", rating: "1.9", isFavourite: true, mobileResponseDescription: "FoamFoam")
     let request = Product.GetImage.Request()
     sut.getImageFromApi(request: request)
     

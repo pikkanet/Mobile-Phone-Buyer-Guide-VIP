@@ -21,7 +21,7 @@ protocol MyCellDelegate: class {
 class ProductListViewController: UIViewController, ProductListViewControllerInterface {
   var interactor: ProductListInteractorInterface!
   var router: ProductListRouter!
-  var displayTableView: [NewMobile] = []
+  var displayTableView: [MobileViewModel] = []
   
   @IBOutlet weak var mAllButton:UIButton!
   @IBOutlet weak var mFavouriteButton:UIButton!
