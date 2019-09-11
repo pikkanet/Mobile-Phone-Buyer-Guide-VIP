@@ -19,7 +19,7 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
   var interactor: ProductInteractorInterface!
   var router: ProductRouter!
   
-  var images: MobileImageResponse = []
+  var mobileImageResponse: MobileImageResponse = []
 
   @IBOutlet weak var mProductRate: UILabel!
   @IBOutlet weak var mProductPrice: UILabel!
@@ -80,7 +80,7 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
   }
   
   func displayImages(viewModel: Product.GetImage.ViewModel) {
-    self.images = viewModel.displayImages
+    self.mobileImageResponse = viewModel.displayImages
     self.mCollectionView.reloadData()
   }
   
@@ -98,14 +98,14 @@ class ProductViewController: UIViewController, ProductViewControllerInterface {
 
 extension ProductViewController:UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.images.count
+    return self.mobileImageResponse.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductImageCollectionViewCell.identifier, for: indexPath) as? ProductImageCollectionViewCell else {
       return UICollectionViewCell()
     }
-    let item = self.images[indexPath.row]
+    let item = self.mobileImageResponse[indexPath.row]
     let image = UIImage(named: "image_not_found")
     if (item.url.contains("http://") || (item.url.contains("https://"))){
       cell.mImage.kf.setImage(with: URL(string: item.url), placeholder: image)
